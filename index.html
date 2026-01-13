@@ -1,143 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NYC Money Guide – Smart Finance for New Yorkers</title>
-<meta name="description" content="NYC Money Guide helps New Yorkers save money, manage rent, credit, and build wealth with practical local advice.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-/* GLOBAL RESET */
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:#FAFAFB;color:#111827;line-height:1.7;}
-a{text-decoration:none;color:inherit;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="fP0kYvgUO8SqY7N42KAUA4lbOoaZagc0sfiUfX4Rpdo" />
+  <title>NYC Money Guide – Smart Finance for New Yorkers</title>
+  <meta name="description" content="NYC Money Guide helps New Yorkers save money, reduce rent, manage credit, and build wealth with practical financial advice." />
+  <meta name="robots" content="index, follow" />
 
-/* HEADER */
-header{background:#1A4F7A;color:white;padding:18px 0;}
-.container{width:90%;max-width:1200px;margin:auto;}
-nav{display:flex;justify-content:space-between;align-items:center;}
-nav h1{font-size:26px;font-weight:700;color:white;}
-nav ul{list-style:none;display:flex;gap:20px;}
-nav ul li a{color:#F7FAFC;font-weight:500;padding:6px 10px;border-radius:5px;transition:background 0.3s;}
-nav ul li a:hover{background:#FF7F50;color:white;}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* HERO */
-.hero{background:#EBF4FF;padding:60px 0;text-align:center;border-radius:0 0 12px 12px;}
-.hero h2{font-size:38px;color:#1A4F7A;margin-bottom:10px;}
-.hero p{font-size:18px;color:#475569;}
+  <style>
+    /* RESET */
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:#FAFAFB;color:#111827;line-height:1.7;padding-bottom:50px;}
+    a{text-decoration:none;color:inherit;}
 
-/* SEARCH & FILTER */
-.search-bar{display:flex;justify-content:center;margin:30px 0;gap:15px;flex-wrap:wrap;}
-.search-bar input{width:100%;max-width:480px;padding:12px 18px;border-radius:30px;border:1px solid #CBD5E1;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:border 0.3s;}
-.search-bar input:focus{border:2px solid #1A4F7A;outline:none;}
-.category-filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.category-filter button{padding:8px 15px;border:none;border-radius:20px;background:#E2E8F0;color:#1A4F7A;font-weight:600;cursor:pointer;transition:0.3s;}
-.category-filter button:hover,.category-filter button.active{background:#FF7F50;color:white;}
+    /* HEADER */
+    header{background:#1A4F7A;color:white;padding:18px 0;}
+    .container{width:90%;max-width:1200px;margin:auto;}
+    nav{display:flex;justify-content:space-between;align-items:center;}
+    nav h1 a{color:white;text-decoration:none;font-size:26px;font-weight:700;}
+    nav ul{list-style:none;display:flex;gap:20px;}
+    nav ul li a{color:#F7FAFC;font-weight:500;padding:6px 10px;border-radius:5px;transition:0.3s;}
+    nav ul li a:hover{background:#FF7F50;color:white;}
 
-/* LAYOUT GRID */
-.main-grid{display:grid;grid-template-columns:3fr 1fr;gap:30px;margin-bottom:30px;}
-#postsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
-.post-card{background:white;padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.07);transition:transform 0.3s, box-shadow 0.3s, opacity 0.5s;display:block;color:#111827;opacity:0;transform:translateY(20px);}
-.post-card.visible{opacity:1;transform:translateY(0);}
-.post-card:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,0.12);}
-.post-card h3{font-size:21px;color:#1A4F7A;margin-bottom:8px;}
-.post-card p{color:#475569;margin-bottom:8px;}
-.tags{font-size:12px;color:#64748B;margin-bottom:6px;}
-.meta{font-size:12px;color:#64748B;}
+    /* HERO */
+    .hero{background:#EBF4FF;padding:60px 0;text-align:center;border-radius:0 0 12px 12px;}
+    .hero h2{font-size:38px;color:#1A4F7A;margin-bottom:10px;}
+    .hero p{font-size:18px;color:#475569;}
 
-/* SIDEBAR */
-.sidebar{background:#F7FAFC;padding:20px;border-radius:12px;position:sticky;top:20px;}
-.sidebar h3{color:#1A4F7A;margin-bottom:12px;}
-.sidebar ul{list-style:none;}
-.sidebar ul li{margin-bottom:8px;}
-.sidebar ul li a{color:#2563EB;font-weight:500;}
-.sidebar ul li a:hover{color:#FF7F50;}
+    /* SEARCH & FILTER */
+    .search-bar{display:flex;justify-content:center;margin:30px 0;gap:15px;flex-wrap:wrap;}
+    .search-bar input{width:100%;max-width:480px;padding:12px 18px;border-radius:30px;border:1px solid #CBD5E1;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:border 0.3s;}
+    .search-bar input:focus{border:2px solid #1A4F7A;outline:none;}
+    .category-filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+    .category-filter button{padding:8px 15px;border:none;border-radius:20px;background:#E2E8F0;color:#1A4F7A;font-weight:600;cursor:pointer;transition:0.3s;}
+    .category-filter button:hover,.category-filter button.active{background:#FF7F50;color:white;}
 
-/* ADSENSE */
-.adsense{background:#E2E8F0;text-align:center;padding:22px;margin:30px 0;border-radius:10px;color:#475569;font-size:14px;}
+    /* GRID LAYOUT */
+    .main-grid{display:grid;grid-template-columns:3fr 1fr;gap:30px;margin-bottom:30px;}
+    #postsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+    .post-card{background:white;padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.07);transition:transform 0.3s, box-shadow 0.3s, opacity 0.5s;display:block;color:#111827;opacity:0;transform:translateY(20px);}
+    .post-card.visible{opacity:1;transform:translateY(0);}
+    .post-card:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,0.12);}
+    .post-card h3{font-size:21px;color:#1A4F7A;margin-bottom:8px;}
+    .post-card p{color:#475569;margin-bottom:8px;}
+    .tags{font-size:12px;color:#64748B;margin-bottom:6px;}
+    .meta{font-size:12px;color:#64748B;}
 
-/* FOOTER */
-footer{background:#1A4F7A;color:#F7FAFC;text-align:center;padding:18px 0;margin-top:40px;}
+    /* SIDEBAR */
+    .sidebar{background:#F7FAFC;padding:20px;border-radius:12px;position:sticky;top:20px;}
+    .sidebar h3{color:#1A4F7A;margin-bottom:12px;}
+    .sidebar ul{list-style:none;}
+    .sidebar ul li{margin-bottom:8px;}
+    .sidebar ul li a{color:#2563EB;font-weight:500;}
+    .sidebar ul li a:hover{color:#FF7F50;}
 
-@media(max-width:900px){.main-grid{grid-template-columns:1fr;}.sidebar{position:relative;top:0;}}
-</style>
+    /* ADSENSE */
+    .adsense{background:#E2E8F0;text-align:center;padding:22px;margin:30px 0;border-radius:10px;color:#475569;font-size:14px;}
+
+    /* FOOTER */
+    footer{background:#1A4F7A;color:#F7FAFC;text-align:center;padding:18px 0;margin-top:40px;}
+
+    @media(max-width:900px){.main-grid{grid-template-columns:1fr;}.sidebar{position:relative;top:0;}}
+  </style>
 </head>
 <body>
 
 <header>
   <div class="container">
     <nav>
-      <h1><a href="../index.html" style="color:white; text-decoration:none;">NYC Money Guide</a></h1>
+      <h1><a href="index.html">NYC Money Guide</a></h1>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#blog">Blog</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
-<div class="container">
-<nav>
-<h1>NYC Money Guide</h1>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="#blog">Blog</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
 </header>
 
 <section class="hero">
-<div class="container">
-<h2>Smart Money Decisions for New Yorkers</h2>
-<p>Rent, credit, savings, insurance & real NYC financial advice.</p>
-</div>
+  <div class="container">
+    <h2>Smart Money Decisions for New Yorkers</h2>
+    <p>Rent, credit, savings, insurance & real NYC financial advice.</p>
+  </div>
 </section>
 
 <div class="container search-bar">
-<input type="text" id="searchInput" placeholder="Search posts...">
-<div class="category-filter">
-<button data-category="all" class="active">All</button>
-<button data-category="rent">Rent</button>
-<button data-category="credit">Credit</button>
-<button data-category="budgeting">Budgeting</button>
-<button data-category="finance">Finance</button>
-<button data-category="cost">Cost</button>
-</div>
+  <input type="text" id="searchInput" placeholder="Search posts...">
+  <div class="category-filter">
+    <button data-category="all" class="active">All</button>
+    <button data-category="rent">Rent</button>
+    <button data-category="credit">Credit</button>
+    <button data-category="budgeting">Budgeting</button>
+    <button data-category="finance">Finance</button>
+    <button data-category="cost">Cost</button>
+  </div>
 </div>
 
 <div class="container main-grid">
-<div id="postsGrid"></div>
+  <div id="postsGrid"></div>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-<h3>Recent Posts</h3>
-<ul id="recentPosts"></ul>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3>Recent Posts</h3>
+    <ul id="recentPosts"></ul>
 
-<h3>Popular Posts</h3>
-<ul id="popularPosts"></ul>
+    <h3>Popular Posts</h3>
+    <ul id="popularPosts"></ul>
 
-<h3>Categories</h3>
-<ul>
-<li><a href="#" data-cat="rent">Rent</a></li>
-<li><a href="#" data-cat="credit">Credit</a></li>
-<li><a href="#" data-cat="budgeting">Budgeting</a></li>
-<li><a href="#" data-cat="finance">Finance</a></li>
-<li><a href="#" data-cat="cost">Cost</a></li>
-</ul>
-</div>
+    <h3>Categories</h3>
+    <ul>
+      <li><a href="index.html#blog" data-cat="rent">Rent</a></li>
+      <li><a href="index.html#blog" data-cat="credit">Credit</a></li>
+      <li><a href="index.html#blog" data-cat="budgeting">Budgeting</a></li>
+      <li><a href="index.html#blog" data-cat="finance">Finance</a></li>
+      <li><a href="index.html#blog" data-cat="cost">Cost</a></li>
+    </ul>
+  </div>
 </div>
 
 <div class="container">
-<div class="adsense">AdSense Ad Placeholder</div>
+  <div class="adsense">AdSense Ad Placeholder</div>
 </div>
 
 <footer>
-<div class="container">
-<p>© 2026 NYC Money Guide. All Rights Reserved.</p>
-</div>
+  <div class="container">
+    <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
+  </div>
 </footer>
 
 <script>
@@ -148,12 +142,12 @@ const popularPostsEl = document.getElementById('popularPosts');
 let postsData = [];
 
 fetch('data/posts.json')
-.then(res=>res.json())
-.then(data=>{
-  postsData = data;
-  displayPosts(postsData);
-  populateSidebar();
-});
+  .then(res => res.json())
+  .then(data => {
+    postsData = data;
+    displayPosts(postsData);
+    populateSidebar();
+  });
 
 function displayPosts(posts){
   postsGrid.innerHTML = '';
@@ -163,7 +157,6 @@ function displayPosts(posts){
     card.className = 'post-card';
     card.innerHTML = `<h3>${post.title}</h3><p>${post.summary}</p><div class="tags">${post.categories.join(', ')}</div><div class="meta">Published: ${post.published} • ${post.readTime}</div>`;
     postsGrid.appendChild(card);
-    // fade-in effect
     setTimeout(()=>card.classList.add('visible'), i*100);
   });
 }
@@ -171,9 +164,7 @@ function displayPosts(posts){
 function populateSidebar(){
   recentPostsEl.innerHTML = '';
   popularPostsEl.innerHTML = '';
-  // recent: last 5 posts
   postsData.slice(0,5).forEach(p=>{recentPostsEl.innerHTML+=`<li><a href="${p.url}">${p.title}</a></li>`});
-  // popular: random 5 posts for now
   postsData.slice(0,5).forEach(p=>{popularPostsEl.innerHTML+=`<li><a href="${p.url}">${p.title}</a></li>`});
 }
 
@@ -196,4 +187,3 @@ document.querySelectorAll('.category-filter button').forEach(btn=>{
 
 </body>
 </html>
-
