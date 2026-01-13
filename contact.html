@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact – NYC Money Guide</title>
+  <meta name="description" content="Contact NYC Money Guide – get in touch for feedback, collaborations or inquiries.">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family:'Inter',sans-serif; background:#f8fafc; color:#1f2937; line-height:1.6; padding-bottom:50px; }
-    a { text-decoration:none; color:#2563eb; }
-    .container { width:90%; max-width:900px; margin:auto; padding-top:50px; }
-    h1{font-size:32px; margin-bottom:20px;}
-    p{margin-bottom:15px;}
-    header{background:#0f172a; color:white; padding:20px 0;}
-    nav{display:flex; justify-content:space-between; align-items:center;}
-    nav h1{font-size:24px; font-weight:700;}
-    nav ul{list-style:none; display:flex; gap:20px;}
-    nav ul li a{color:#e5e7eb; font-weight:500;}
-    footer {background:#0f172a; color:#cbd5f5; padding:20px 0; text-align:center; margin-top:40px;}
+    * {box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:#FAFAFB;color:#111827;line-height:1.8;padding-bottom:50px;}
+    a{text-decoration:none;color:#2563EB;}
+
+    /* HEADER */
+    header{background:#1A4F7A;color:white;padding:18px 0;}
+    .container{width:90%;max-width:1000px;margin:auto;}
+    nav{display:flex;justify-content:space-between;align-items:center;}
+    nav h1 a{color:white;text-decoration:none;font-size:26px;font-weight:700;}
+    nav ul{list-style:none;display:flex;gap:20px;}
+    nav ul li a{color:#F7FAFC;font-weight:500;padding:5px 8px;border-radius:5px;}
+    nav ul li a:hover{background:#FF7F50;color:white;}
+
+    /* PAGE CONTENT */
+    .page-header{padding:40px 0;text-align:center;}
+    .page-header h2{font-size:32px;color:#1A4F7A;margin-bottom:10px;}
+    .page-content{background:white;padding:30px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+    .page-content p{margin-bottom:18px;font-size:16px;color:#475569;}
+    .contact-info{margin-top:20px;font-weight:600;}
+
+    footer{background:#1A4F7A;color:#F7FAFC;text-align:center;padding:18px 0;margin-top:40px;}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <h1>NYC Money Guide</h1>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#blog">Blog</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
+<header>
   <div class="container">
-    <h1>Contact</h1>
-    <p>Email: <a href="mailto:contact@nycmoneyguide.com">contact@nycmoneyguide.com</a></p>
-    <p>You can also use this page to add a contact form in the future.</p>
+    <nav>
+      <h1><a href="index.html">NYC Money Guide</a></h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
-    </div>
-  </footer>
+<div class="container">
+  <div class="page-header">
+    <h2>Contact NYC Money Guide</h2>
+    <p>We’d love to hear from you! Reach out for feedback, collaborations, or inquiries.</p>
+  </div>
+  <div class="page-content">
+    <p class="contact-info">Email: <a href="mailto:contact@nycmoneyguide.com">contact@nycmoneyguide.com</a></p>
+    <p class="contact-info">Follow us on social media for updates and news.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>
