@@ -1,15 +1,152 @@
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <h2>About NYC Money Guide</h2>
-    <p>NYC Money Guide exists to help New Yorkers make smarter financial decisions in one of the most expensive cities on earth. Practical, location-specific money guidance only.</p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYC Money Guide – Smart Finance for New Yorkers</title>
+  <meta name="description" content="NYC Money Guide helps New Yorkers save money, manage rent, credit, and build wealth with practical local advice." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Email: contact@nycmoneyguide.com</p>
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family:'Inter',sans-serif; background:#f8fafc; color:#1f2937; line-height:1.6; }
+    a { text-decoration:none; color:#2563eb; }
+    header { background:#0f172a; color:white; padding:20px 0; }
+    .container { width:90%; max-width:1100px; margin:auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; }
+    nav h1 { font-size:24px; font-weight:700; }
+    nav ul { list-style:none; display:flex; gap:20px; }
+    nav ul li a { color:#e5e7eb; font-weight:500; }
+
+    /* Hero */
+    .hero { padding:60px 0; background:#020617; color:white; text-align:center; }
+    .hero h2 { font-size:36px; margin-bottom:10px; }
+    .hero p { font-size:18px; color:#cbd5f5; }
+
+    /* Search & Filter */
+    .search-bar { margin:30px 0; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .search-bar input { padding:10px; flex:1; border-radius:8px; border:1px solid #cbd5e1; }
+    .category-filter button { padding:8px 12px; border:none; border-radius:5px; background:#e2e8f0; cursor:pointer; transition:0.3s; }
+    .category-filter button.active, .category-filter button:hover { background:#2563eb; color:white; }
+
+    /* Posts Grid */
+    #postsGrid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px; margin-top:30px; }
+    .post-card { background:white; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display:block; color:inherit; }
+    .post-card:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.1); }
+    .post-card h3 { font-size:20px; margin-bottom:10px; }
+    .post-card p { color:#475569; margin-bottom:10px; }
+    .tags { font-size:12px; color:#94a3b8; margin-bottom:5px; }
+    .meta { font-size:12px; color:#94a3b8; }
+
+    /* AdSense */
+    .adsense { background:#e5e7eb; text-align:center; padding:20px; margin:30px 0; border-radius:8px; color:#475569; font-size:14px; }
+
+    footer { background:#0f172a; color:#cbd5f5; padding:20px 0; text-align:center; margin-top:40px; }
+
+    @media(max-width:600px){ .hero h2{font-size:28px;} .post-card h3{font-size:18px;} }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+        <h1>NYC Money Guide</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h2>Smart Money Decisions for New Yorkers</h2>
+      <p>Rent, credit, savings, insurance & real NYC financial advice.</p>
+    </div>
+  </section>
+
+  <!-- SEARCH & CATEGORY FILTER -->
+  <div class="container search-bar">
+    <input type="text" id="searchInput" placeholder="Search posts...">
+    <div class="category-filter">
+      <button data-category="all" class="active">All</button>
+      <button data-category="rent">Rent</button>
+      <button data-category="credit">Credit</button>
+      <button data-category="budgeting">Budgeting</button>
+      <button data-category="finance">Finance</button>
+      <button data-category="cost">Cost</button>
+    </div>
   </div>
-</section>
+
+  <!-- POSTS GRID -->
+  <div class="container" id="postsGrid">
+    <!-- JavaScript dynamically adds post cards here -->
+  </div>
+
+  <!-- ADSENSE PLACEHOLDER -->
+  <div class="container" style="text-align:center;">
+    <div class="adsense">AdSense Ad Placeholder</div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC POSTS SCRIPT -->
+  <script>
+  const postsGrid = document.getElementById('postsGrid');
+  let postsData = [];
+
+  // Load posts from JSON
+  fetch('data/posts.json')
+    .then(res => res.json())
+    .then(data => { postsData = data; displayPosts(postsData); });
+
+  function displayPosts(posts){
+    postsGrid.innerHTML = '';
+    posts.forEach(post=>{
+      const card = document.createElement('a');
+      card.href = post.url;
+      card.className = 'post-card';
+      card.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.summary}</p>
+        <div class="tags">${post.categories.join(', ')}</div>
+        <div class="meta">Published: ${post.published} • ${post.readTime}</div>
+      `;
+      postsGrid.appendChild(card);
+    });
+  }
+
+  // SEARCH FUNCTIONALITY
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('keyup', function(){
+    const query = this.value.toLowerCase();
+    const filtered = postsData.filter(post => 
+      post.title.toLowerCase().includes(query) || post.summary.toLowerCase().includes(query) || post.categories.some(c=>c.toLowerCase().includes(query))
+    );
+    displayPosts(filtered);
+  });
+
+  // CATEGORY FILTER FUNCTIONALITY
+  const filterButtons = document.querySelectorAll('.category-filter button');
+  filterButtons.forEach(btn=>{
+    btn.addEventListener('click', function(){
+      filterButtons.forEach(b=>b.classList.remove('active'));
+      this.classList.add('active');
+      const category = this.dataset.category;
+      const filtered = (category === 'all') ? postsData : postsData.filter(post => post.categories.includes(category));
+      displayPosts(filtered);
+    });
+  });
+  </script>
+</body>
+</html>
