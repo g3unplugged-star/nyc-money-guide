@@ -4,215 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NYC Money Guide – Smart Finance for New Yorkers</title>
-  <meta name="description" content="NYC Money Guide helps New Yorkers save money, manage rent, credit, insurance, and build wealth with practical NYC-focused financial advice." />
-  <meta name="robots" content="index, follow" />
-  <meta name="google-site-verification" content="fP0kYvgUO8SqY7N42KAUA4lbOoaZagc0sfiUfX4Rpdo" />
-
-  <!-- Google Fonts -->
+  <meta name="description" content="NYC Money Guide helps New Yorkers save money, manage rent, credit, and build wealth with practical local advice." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* GLOBAL RESET */
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Inter', sans-serif; background:#F8FAFC; color:#111827; line-height:1.6; }
-    a { text-decoration:none; color:#2563EB; transition:0.3s; }
-    a:hover { color:#F59E0B; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1f2937; line-height: 1.6; }
+    a { text-decoration: none; color: #2563eb; }
+    header { background: #0f172a; color: #fff; padding: 20px 0; }
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav h1 { font-size: 24px; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { color: #e5e7eb; font-weight: 500; }
 
-    .container { width:90%; max-width:1200px; margin:auto; }
+    /* Hero */
+    .hero { padding: 60px 0; background: #020617; color: white; text-align: center; }
+    .hero h2 { font-size: 36px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; color: #cbd5f5; }
 
-    /* HEADER */
-    header { background:#1F2937; color:white; padding:20px 0; position:sticky; top:0; z-index:999; }
-    nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-    nav h1 { font-size:28px; font-weight:700; }
-    nav ul { list-style:none; display:flex; gap:25px; }
-    nav ul li a { color:white; font-weight:500; }
-    nav ul li a:hover { color:#F59E0B; }
+    /* Posts Grid */
+    #postsGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+    .post-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display: block; color: inherit; }
+    .post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .post-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .post-card p { color: #475569; margin-bottom: 10px; }
+    .tags { font-size: 12px; color: #94a3b8; margin-bottom: 5px; }
+    .meta { font-size: 12px; color: #94a3b8; }
 
-    /* HERO SECTION */
-    .hero { background:#020617; color:white; text-align:center; padding:100px 20px; border-radius:0 0 25px 25px; }
-    .hero h2 { font-size:48px; margin-bottom:15px; line-height:1.2; }
-    .hero p { font-size:18px; color:#C0CFFF; max-width:700px; margin:auto; }
+    /* Search & Filters */
+    .search-bar { margin: 30px 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .search-bar input { padding: 10px; flex: 1; border-radius: 8px; border: 1px solid #cbd5e1; }
+    .category-filter button { padding: 8px 12px; border: none; border-radius: 5px; background: #e2e8f0; cursor: pointer; transition: background 0.3s; }
+    .category-filter button.active, .category-filter button:hover { background: #2563eb; color: white; }
 
-    /* MAIN LAYOUT */
-    main { display:flex; gap:30px; margin-top:50px; flex-wrap:wrap; }
-    .content { flex:3; min-width:300px; }
-    .sidebar { flex:1; min-width:250px; position:sticky; top:100px; height:max-content; }
+    /* Footer */
+    footer { background: #0f172a; color: #cbd5f5; padding: 20px 0; text-align: center; margin-top: 40px; }
 
-    /* SEARCH & FILTER */
-    .search-box { margin-bottom:20px; }
-    .search-box input { width:100%; padding:10px 15px; border-radius:8px; border:1px solid #ccc; font-size:16px; }
-    .category-filter { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
-    .category-filter button { padding:8px 15px; border:none; border-radius:8px; cursor:pointer; background:#2563EB; color:white; transition:0.3s; font-weight:500; }
-    .category-filter button:hover { background:#F59E0B; }
-    .category-filter button.active { background:#F59E0B; }
-
-    /* POST GRID */
-    .posts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
-    .post-card { background:white; padding:25px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.05); transition:0.3s; }
-    .post-card:hover { transform:translateY(-5px); box-shadow:0 15px 35px rgba(0,0,0,0.1); }
-    .post-card h3 { margin-bottom:12px; font-size:22px; color:#1F2937; }
-    .post-card p { color:#475569; }
-
-    /* SIDEBAR CARDS */
-    .sidebar-card { background:white; padding:20px; border-radius:12px; margin-bottom:25px; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
-    .sidebar-card h4 { margin-bottom:15px; font-size:18px; }
-    .sidebar-card ul { list-style:none; }
-    .sidebar-card ul li a { display:block; padding:5px 0; color:#2563EB; }
-    .sidebar-card ul li a:hover { color:#F59E0B; }
-
-    /* ADSENSE / CTA */
-    .adsense { background:#E5E7EB; text-align:center; padding:20px; margin:25px 0; border-radius:8px; color:#475569; font-size:14px; }
-    .cta { background:#2563EB; color:white; text-align:center; padding:25px; border-radius:12px; margin:30px 0; }
-    .cta a { color:white; font-weight:600; font-size:18px; }
-    .cta a:hover { color:#F59E0B; }
-
-    /* SECTIONS */
-    section { padding:60px 0; }
-    section h2 { font-size:32px; margin-bottom:25px; }
-
-    /* FOOTER */
-    footer { background:#1F2937; color:#C0CFFF; padding:30px 0; text-align:center; margin-top:50px; font-size:14px; }
-
-    /* RESPONSIVE */
-    @media(max-width:992px){ main { flex-direction:column; } .hero h2 { font-size:36px; } }
+    /* Responsive */
+    @media(max-width:600px){ .hero h2{font-size:28px;} .post-card h3{font-size:18px;} }
   </style>
 </head>
 
 <body>
-
-<header>
-  <div class="container">
-    <nav>
-      <h1>NYC Money Guide</h1>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section class="hero" id="home">
-  <div class="container">
-    <h2>Smart Money Decisions for New Yorkers</h2>
-    <p>Rent, credit, savings, insurance & real NYC financial advice.</p>
-  </div>
-</section>
-
-<main class="container">
-  <!-- CONTENT AREA -->
-  <div class="content">
-    <section id="blog">
-      <h2>Latest Articles</h2>
-
-      <!-- SEARCH -->
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search articles...">
-      </div>
-
-      <!-- CATEGORY FILTER -->
-      <div class="category-filter">
-        <button class="active" data-category="all">All</button>
-        <button data-category="rent">Rent</button>
-        <button data-category="credit">Credit Cards</button>
-        <button data-category="cost">Cost of Living</button>
-      </div>
-
-      <!-- POSTS GRID -->
-      <div class="posts" id="postsGrid">
-        <div class="post-card" data-category="rent">
-          <h3>How Much Rent Can You Afford in NYC?</h3>
-          <p>Understand NYC rent rules, 30% rule reality, and survival budgeting.</p>
-        </div>
-        <div class="post-card" data-category="credit">
-          <h3>Best Credit Cards for NYC Immigrants</h3>
-          <p>No SSN? No problem. Here’s how to build credit in New York.</p>
-        </div>
-        <div class="post-card" data-category="cost">
-          <h3>NYC Cost of Living Breakdown (2026)</h3>
-          <p>Realistic expenses for singles, couples, and families.</p>
-        </div>
-      </div>
-
-      <div class="adsense">AdSense Ad Placeholder</div>
-    </section>
-  </div>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-card">
-      <h4>Popular Posts</h4>
-      <ul>
-        <li><a href="#">How Much Rent Can You Afford?</a></li>
-        <li><a href="#">Best Credit Cards in NYC</a></li>
-        <li><a href="#">Cost of Living Breakdown</a></li>
-      </ul>
+  <header>
+    <div class="container">
+      <nav>
+        <h1>NYC Money Guide</h1>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <div class="sidebar-card">
-      <h4>Subscribe for Tips</h4>
-      <div class="cta">
-        <a href="#">Join Newsletter</a>
-      </div>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h2>Smart Money Decisions for New Yorkers</h2>
+      <p>Rent, credit, savings, insurance & real NYC financial advice.</p>
     </div>
+  </section>
 
-    <div class="sidebar-card">
-      <h4>Ad Placeholder</h4>
-      <div class="adsense">AdSense Ad</div>
+  <!-- SEARCH + FILTER -->
+  <div class="container search-bar">
+    <input type="text" id="searchInput" placeholder="Search posts...">
+    <div class="category-filter">
+      <button data-category="all" class="active">All</button>
+      <button data-category="rent">Rent</button>
+      <button data-category="credit">Credit</button>
+      <button data-category="budgeting">Budgeting</button>
+      <button data-category="finance">Finance</button>
+      <button data-category="cost">Cost</button>
     </div>
-  </aside>
-</main>
-
-<section id="about">
-  <div class="container">
-    <h2>About NYC Money Guide</h2>
-    <p>NYC Money Guide helps New Yorkers make smarter financial decisions in one of the most expensive cities on earth. Practical, NYC-specific money advice.</p>
   </div>
-</section>
 
-<section id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Email: contact@nycmoneyguide.com</p>
+  <!-- POSTS GRID -->
+  <div class="container" id="postsGrid">
+    <!-- JS will dynamically load post cards here -->
   </div>
-</section>
 
-<footer>
-  <div class="container">
-    <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
+  <!-- ADSENSE PLACEHOLDER -->
+  <div class="container" style="text-align:center; margin:30px 0;">
+    <div class="adsense" style="background:#e5e7eb; padding:20px; border-radius:8px; color:#475569;">AdSense Ad Placeholder</div>
   </div>
-</footer>
 
-<!-- JS for SEARCH & CATEGORY FILTER -->
-<script>
-const searchInput = document.getElementById('searchInput');
-const posts = document.querySelectorAll('.post-card');
-const filterButtons = document.querySelectorAll('.category-filter button');
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>About NYC Money Guide</h2>
+      <p>NYC Money Guide exists to help New Yorkers make smarter financial decisions in one of the most expensive cities on earth. Practical, location-specific advice only.</p>
+    </div>
+  </section>
 
-// SEARCH FUNCTIONALITY
-searchInput.addEventListener('keyup', function(){
-  const query = this.value.toLowerCase();
-  posts.forEach(post => {
-    const title = post.querySelector('h3').textContent.toLowerCase();
-    const desc = post.querySelector('p').textContent.toLowerCase();
-    post.style.display = (title.includes(query) || desc.includes(query)) ? 'block' : 'none';
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: contact@nycmoneyguide.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC POSTS SCRIPT -->
+  <script>
+  const postsGrid = document.getElementById('postsGrid');
+  let postsData = [];
+
+  // Load JSON
+  fetch('data/posts.json')
+    .then(res => res.json())
+    .then(data => { postsData = data; displayPosts(postsData); });
+
+  // Display function
+  function displayPosts(posts){
+    postsGrid.innerHTML = '';
+    posts.forEach(post=>{
+      const card = document.createElement('a');
+      card.href = post.url;
+      card.className = 'post-card';
+      card.innerHTML = `
+        <h3>${post.title}</h3>
+        <p>${post.summary}</p>
+        <div class="tags">${post.categories.join(', ')}</div>
+        <div class="meta">Published: ${post.published} • ${post.readTime}</div>
+      `;
+      postsGrid.appendChild(card);
+    });
+  }
+
+  // SEARCH FUNCTIONALITY
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('keyup', function(){
+    const query = this.value.toLowerCase();
+    const filtered = postsData.filter(post => 
+      post.title.toLowerCase().includes(query) || post.summary.toLowerCase().includes(query) || post.categories.some(c => c.toLowerCase().includes(query))
+    );
+    displayPosts(filtered);
   });
-});
 
-// CATEGORY FILTER FUNCTIONALITY
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', function(){
-    filterButtons.forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    const category = this.dataset.category;
-    posts.forEach(post => {
-      post.style.display = (category === 'all' || post.dataset.category === category) ? 'block' : 'none';
+  // CATEGORY FILTER FUNCTIONALITY
+  const filterButtons = document.querySelectorAll('.category-filter button');
+  filterButtons.forEach(btn=>{
+    btn.addEventListener('click', function(){
+      filterButtons.forEach(b=>b.classList.remove('active'));
+      this.classList.add('active');
+      const category = this.dataset.category;
+      const filtered = (category === 'all') ? postsData : postsData.filter(post => post.categories.includes(category));
+      displayPosts(filtered);
     });
   });
-});
-</script>
-
+  </script>
 </body>
 </html>
