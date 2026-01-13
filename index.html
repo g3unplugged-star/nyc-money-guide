@@ -18,18 +18,15 @@
     nav ul { list-style:none; display:flex; gap:20px; }
     nav ul li a { color:#e5e7eb; font-weight:500; }
 
-    /* Hero */
     .hero { padding:60px 0; background:#020617; color:white; text-align:center; }
     .hero h2 { font-size:36px; margin-bottom:10px; }
     .hero p { font-size:18px; color:#cbd5f5; }
 
-    /* Search & Filter */
     .search-bar { margin:30px 0; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
     .search-bar input { padding:10px; flex:1; border-radius:8px; border:1px solid #cbd5e1; }
     .category-filter button { padding:8px 12px; border:none; border-radius:5px; background:#e2e8f0; cursor:pointer; transition:0.3s; }
     .category-filter button.active, .category-filter button:hover { background:#2563eb; color:white; }
 
-    /* Posts Grid */
     #postsGrid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px; margin-top:30px; }
     .post-card { background:white; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; display:block; color:inherit; }
     .post-card:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.1); }
@@ -38,17 +35,14 @@
     .tags { font-size:12px; color:#94a3b8; margin-bottom:5px; }
     .meta { font-size:12px; color:#94a3b8; }
 
-    /* AdSense */
     .adsense { background:#e5e7eb; text-align:center; padding:20px; margin:30px 0; border-radius:8px; color:#475569; font-size:14px; }
 
     footer { background:#0f172a; color:#cbd5f5; padding:20px 0; text-align:center; margin-top:40px; }
-
     @media(max-width:600px){ .hero h2{font-size:28px;} .post-card h3{font-size:18px;} }
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
   <header>
     <div class="container">
       <nav>
@@ -63,7 +57,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="container">
       <h2>Smart Money Decisions for New Yorkers</h2>
@@ -71,7 +64,6 @@
     </div>
   </section>
 
-  <!-- SEARCH & CATEGORY FILTER -->
   <div class="container search-bar">
     <input type="text" id="searchInput" placeholder="Search posts...">
     <div class="category-filter">
@@ -84,12 +76,8 @@
     </div>
   </div>
 
-  <!-- POSTS GRID -->
-  <div class="container" id="postsGrid">
-    <!-- JavaScript dynamically adds post cards here -->
-  </div>
+  <div class="container" id="postsGrid"></div>
 
-  <!-- ADSENSE PLACEHOLDER -->
   <div class="container" style="text-align:center;">
     <div class="adsense">AdSense Ad Placeholder</div>
   </div>
@@ -100,12 +88,10 @@
     </div>
   </footer>
 
-  <!-- DYNAMIC POSTS SCRIPT -->
   <script>
   const postsGrid = document.getElementById('postsGrid');
   let postsData = [];
 
-  // Load posts from JSON
   fetch('data/posts.json')
     .then(res => res.json())
     .then(data => { postsData = data; displayPosts(postsData); });
@@ -126,17 +112,17 @@
     });
   }
 
-  // SEARCH FUNCTIONALITY
   const searchInput = document.getElementById('searchInput');
   searchInput.addEventListener('keyup', function(){
     const query = this.value.toLowerCase();
-    const filtered = postsData.filter(post => 
-      post.title.toLowerCase().includes(query) || post.summary.toLowerCase().includes(query) || post.categories.some(c=>c.toLowerCase().includes(query))
+    const filtered = postsData.filter(post =>
+      post.title.toLowerCase().includes(query) ||
+      post.summary.toLowerCase().includes(query) ||
+      post.categories.some(c=>c.toLowerCase().includes(query))
     );
     displayPosts(filtered);
   });
 
-  // CATEGORY FILTER FUNCTIONALITY
   const filterButtons = document.querySelectorAll('.category-filter button');
   filterButtons.forEach(btn=>{
     btn.addEventListener('click', function(){
