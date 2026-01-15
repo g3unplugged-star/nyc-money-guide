@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://g3unplugged-star.github.io/nyc-money-guide/sitemap.xml
