@@ -2,46 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Renting in NYC – Complete Money Guide</title>
-  <meta name="description" content="All NYC rent guides in one place: affordability, rules, borough comparisons, and strategies." />
+  <title>Renting in NYC – Complete Money Guide | NYC Money Guide</title>
+  <meta name="description" content="Explore all NYC rent guides in one place: affordability, borough comparisons, rent rules, and smart renting strategies." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#FAFAFB;
+      color:#111827;
+      line-height:1.7;
+    }
+    a{text-decoration:none;color:#2563EB}
+
+    /* HEADER */
+    header{
+      background:#1A4F7A;
+      padding:18px 0;
+    }
+    header h1{
+      font-size:24px;
+      text-align:center;
+    }
+    header h1 a{
+      color:#fff;
+      font-weight:700;
+    }
+
+    /* HERO */
+    .hero{
+      background:#EBF4FF;
+      padding:60px 20px;
+      text-align:center;
+    }
+    .hero h2{
+      font-size:38px;
+      color:#1A4F7A;
+      margin-bottom:12px;
+    }
+    .hero p{
+      font-size:18px;
+      color:#475569;
+      max-width:720px;
+      margin:auto;
+    }
+
+    /* CONTAINER */
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:auto;
+      padding:50px 0;
+    }
+
+    /* SECTION */
+    .section{
+      margin-bottom:50px;
+    }
+    .section h3{
+      font-size:26px;
+      color:#1A4F7A;
+      margin-bottom:20px;
+    }
+
+    /* CARD GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+    .card{
+      background:#fff;
+      padding:24px;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      transition:transform .3s, box-shadow .3s;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 12px 28px rgba(0,0,0,0.15);
+    }
+    .card h4{
+      font-size:20px;
+      margin-bottom:10px;
+      color:#1A4F7A;
+    }
+    .card p{
+      font-size:15px;
+      color:#475569;
+    }
+
+    /* INFO BOX */
+    .info-box{
+      background:#F1F5F9;
+      border-left:5px solid #1A4F7A;
+      padding:22px;
+      border-radius:10px;
+      margin:40px 0;
+      font-size:16px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#1A4F7A;
+      color:#E5E7EB;
+      text-align:center;
+      padding:20px 0;
+      margin-top:40px;
+      font-size:14px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <h2><a href="../index.html">NYC Money Guide</a></h2>
+  <h1><a href="../index.html">NYC Money Guide</a></h1>
 </header>
 
-<main style="max-width:900px;margin:auto;line-height:1.8">
+<section class="hero">
+  <h2>Renting in NYC</h2>
+  <p>
+    Everything you need to know about renting in New York City —
+    affordability, borough differences, rules, and smart strategies —
+    organized in one trusted place.
+  </p>
+</section>
 
-<h1>Renting in NYC – Complete Money Guide</h1>
+<main class="container">
 
-<p>
-Rent is the largest expense for most New Yorkers.
-This hub connects all our in-depth guides on NYC rent,
-rules, affordability, and strategies.
-</p>
+  <div class="info-box">
+    <strong>Why this hub exists:</strong><br>
+    Rent is the single largest expense for most New Yorkers.
+    This page connects all our in-depth NYC rent guides so you can
+    make smarter housing decisions without confusion.
+  </div>
 
-<h2>Core Rent Guides</h2>
-<ul>
-  <li><a href="../posts/how-much-rent.html">How Much Rent Can You Afford in NYC?</a></li>
-</ul>
+  <!-- CORE GUIDES -->
+  <div class="section">
+    <h3>Core NYC Rent Guides</h3>
+    <div class="grid">
+      <div class="card">
+        <h4><a href="../posts/how-much-rent.html">How Much Rent Can You Afford in NYC?</a></h4>
+        <p>
+          A realistic affordability guide based on income,
+          borough, and real NYC landlord rules.
+        </p>
+      </div>
+    </div>
+  </div>
 
-<h2>Rent Rules & Basics</h2>
-<ul>
-  <li><a href="../posts/nyc-rent-rules.html">NYC Rent Rules Explained</a></li>
-</ul>
+  <!-- RULES -->
+  <div class="section">
+    <h3>NYC Rent Rules & Basics</h3>
+    <div class="grid">
+      <div class="card">
+        <h4><a href="../posts/nyc-rent-rules.html">NYC Rent Rules Explained</a></h4>
+        <p>
+          Learn about the 40x rule, guarantors,
+          broker fees, and lease requirements.
+        </p>
+      </div>
+    </div>
+  </div>
 
-<h2>Advanced Rent Strategies</h2>
-<ul>
-  <li><a href="../posts/negotiate-rent.html">How to Negotiate Rent in NYC</a></li>
-</ul>
+  <!-- STRATEGIES -->
+  <div class="section">
+    <h3>Advanced Rent Strategies</h3>
+    <div class="grid">
+      <div class="card">
+        <h4><a href="../posts/negotiate-rent.html">How to Negotiate Rent in NYC</a></h4>
+        <p>
+          Smart negotiation tactics that actually work
+          in the NYC rental market.
+        </p>
+      </div>
+    </div>
+  </div>
 
 </main>
 
 <footer>
-  <p>© 2026 NYC Money Guide</p>
+  © 2026 NYC Money Guide · Built for New Yorkers
 </footer>
 
 </body>
