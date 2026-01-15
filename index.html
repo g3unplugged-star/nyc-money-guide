@@ -80,6 +80,7 @@
   }
 }
 </script>
+  
 </head>
 <body>
 
@@ -198,7 +199,33 @@ document.querySelectorAll('.category-filter button').forEach(btn=>{
   });
 });
 </script>
+  <script>
+fetch("data/posts.json")
+  .then(response => response.json())
+  .then(posts => {
+    const container = document.getElementById("posts-container");
+    container.innerHTML = "";
+
+    posts.forEach(post => {
+      const card = document.createElement("div");
+      card.className = "post-card";
+
+      card.innerHTML = `
+        <h3><a href="${post.url}">${post.title}</a></h3>
+        <p>${post.summary}</p>
+        <small>${post.published} • ${post.readTime}</small>
+      `;
+
+      container.appendChild(card);
+    });
+  })
+  .catch(err => {
+    console.error("Post loading failed:", err);
+  });
+</script>
+
 
 </body>
 </html>
+
 
