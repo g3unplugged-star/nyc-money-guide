@@ -32,6 +32,57 @@
   color:#334155;
   font-size:18px;
 }
+/* ===== FAQ ACCORDION ===== */
+.faq {
+  margin-top: 30px;
+}
+
+.faq-item {
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.faq-question {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-weight: 600;
+  color: #1A4F7A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background: #F8FAFC;
+}
+
+.faq-question span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 20px;
+  color: #475569;
+}
+
+.faq-answer p {
+  margin: 15px 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-item.active .faq-question span {
+  transform: rotate(45deg);
+}
 
     table{
       width:100%;
@@ -551,35 +602,75 @@ has a larger financial impact than cutting grocery quality.
 
 <h2>Frequently Asked Questions (NYC Grocery Costs)</h2>
 
-<h3>How much do groceries cost per month for a single person in NYC?</h3>
-<p>
-Most single adults in New York City spend between <strong>$350 and $500 per month</strong>
-on groceries, assuming most meals are cooked at home and food delivery is limited.
-</p>
+<div class="faq">
 
-<h3>Is grocery shopping cheaper in Queens than Manhattan?</h3>
-<p>
-Yes. Queens generally has lower grocery prices due to a high concentration of
-ethnic markets and competitive local stores. Manhattan tends to be the most expensive.
-</p>
+  <div class="faq-item">
+    <div class="faq-question">
+      How much do groceries cost per month for a single person in NYC?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Most single adults in New York City spend between <strong>$350 and $500 per month</strong>
+        on groceries, assuming most meals are cooked at home.
+      </p>
+    </div>
+  </div>
 
-<h3>Does shopping at Trader Joe’s really save money in NYC?</h3>
-<p>
-Trader Joe’s is often cheaper for staples and frozen foods, but limited locations
-and selection mean many New Yorkers still combine it with other stores.
-</p>
+  <div class="faq-item">
+    <div class="faq-question">
+      Is grocery shopping cheaper in Queens than Manhattan?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Yes. Queens generally has lower grocery prices due to a high concentration of
+        ethnic markets and competitive local stores. Manhattan remains the most expensive.
+      </p>
+    </div>
+  </div>
 
-<h3>How can I reduce grocery costs in NYC without sacrificing quality?</h3>
-<p>
-Shopping at ethnic markets, planning meals in advance, avoiding impulse bodega purchases,
-and limiting grocery delivery services can reduce spending by $100–$200 per month.
-</p>
+  <div class="faq-item">
+    <div class="faq-question">
+      Does shopping at Trader Joe’s really save money in NYC?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Trader Joe’s is often cheaper for staples and frozen foods, but limited locations
+        mean many New Yorkers combine it with other grocery stores.
+      </p>
+    </div>
+  </div>
 
-<h3>Are groceries cheaper than eating out in NYC?</h3>
-<p>
-Yes. Home-cooked groceries typically cost <strong>$400–$700/month</strong>,
-while frequent dining out or delivery can exceed <strong>$1,000/month</strong>.
-</p>
+  <div class="faq-item">
+    <div class="faq-question">
+      How can I reduce grocery costs in NYC without sacrificing quality?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Shopping at ethnic markets, planning meals ahead, avoiding impulse bodega purchases,
+        and limiting grocery delivery services can reduce costs by $100–$200 per month.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Are groceries cheaper than eating out in NYC?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Yes. Home-cooked groceries usually cost <strong>$400–$700/month</strong>,
+        while frequent dining out or delivery can exceed <strong>$1,000/month</strong>.
+      </p>
+    </div>
+  </div>
+
+</div>
+
 
 <h2>Last Updated</h2>
 <p>
@@ -646,6 +737,14 @@ function calculateGroceryCost() {
 
 ["household", "borough", "style"].forEach(id => {
   document.getElementById(id).addEventListener("change", calculateGroceryCost);
+});
+</script>
+<script>
+document.querySelectorAll(".faq-question").forEach(item => {
+  item.addEventListener("click", () => {
+    const parent = item.parentElement;
+    parent.classList.toggle("active");
+  });
 });
 </script>
 
