@@ -1,1 +1,181 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How Much Does Grocery Shopping Cost in NYC? (2026 Guide)</title>
+
+  <meta name="description" content="A realistic breakdown of grocery shopping costs in NYC, including borough-wise comparisons, monthly budgets, and ways to save money." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      font-family:'Inter',sans-serif;
+      background:#FAFAFB;
+      color:#111827;
+      line-height:1.8;
+      margin:0;
+    }
+    .container{
+      width:90%;
+      max-width:900px;
+      margin:auto;
+      padding:40px 0;
+    }
+    h1,h2,h3{
+      color:#1A4F7A;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:25px 0;
+    }
+    table th,table td{
+      border:1px solid #E5E7EB;
+      padding:12px;
+      text-align:left;
+    }
+    table th{
+      background:#EBF4FF;
+    }
+    .box{
+      background:#F1F5F9;
+      padding:18px;
+      border-left:5px solid #1A4F7A;
+      border-radius:8px;
+      margin:30px 0;
+    }
+    a{color:#2563EB;text-decoration:none}
+    footer{
+      text-align:center;
+      color:#64748B;
+      margin-top:60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="container">
+  <h2><a href="../index.html">NYC Money Guide</a></h2>
+</header>
+
+<main class="container">
+
+<h1>How Much Does Grocery Shopping Cost in NYC? (2026 Guide)</h1>
+<p><strong>Updated:</strong> January 2026 · 6 min read</p>
+
+<p>
+Grocery shopping in New York City can vary drastically depending on where you live,
+your lifestyle, and how often you cook at home.
+This guide explains the <strong>real cost of groceries in NYC</strong>
+with practical examples and borough-level differences.
+</p>
+
+<p>
+Part of our <a href="../topics/cost-of-living-nyc.html">NYC cost of living guide</a>.
+</p>
+
+<div class="box">
+<strong>Quick Answer:</strong><br>
+Most New Yorkers spend between <strong>$350 and $700 per month</strong> on groceries,
+depending on household size and shopping habits.
+</div>
+
+<h2>Average Grocery Costs in NYC</h2>
+
+<table>
+<tr>
+  <th>Household Type</th>
+  <th>Monthly Cost</th>
+</tr>
+<tr>
+  <td>Single person</td>
+  <td>$350 – $500</td>
+</tr>
+<tr>
+  <td>Couple</td>
+  <td>$600 – $800</td>
+</tr>
+<tr>
+  <td>Family (3–4 people)</td>
+  <td>$900 – $1,200+</td>
+</tr>
+</table>
+
+<h2>Grocery Costs by NYC Borough</h2>
+
+<table>
+<tr>
+  <th>Borough</th>
+  <th>Monthly Grocery Cost</th>
+  <th>Notes</th>
+</tr>
+<tr>
+  <td>Manhattan</td>
+  <td>$450 – $750</td>
+  <td>Higher prices, more specialty stores</td>
+</tr>
+<tr>
+  <td>Brooklyn</td>
+  <td>$400 – $650</td>
+  <td>Wide range by neighborhood</td>
+</tr>
+<tr>
+  <td>Queens</td>
+  <td>$350 – $600</td>
+  <td>More affordable ethnic markets</td>
+</tr>
+<tr>
+  <td>Bronx</td>
+  <td>$300 – $550</td>
+  <td>Lower average prices</td>
+</tr>
+</table>
+
+<h2>How Grocery Costs Fit Into an NYC Budget</h2>
+
+<p>
+Groceries typically account for <strong>10–15%</strong> of a New Yorker’s monthly expenses.
+Housing remains the largest cost —
+see <a href="how-much-rent.html">how much rent you can afford in NYC</a>.
+</p>
+
+<h2>Ways to Reduce Grocery Costs in NYC</h2>
+
+<ul>
+  <li>Shop at local ethnic markets</li>
+  <li>Use weekly sales and store apps</li>
+  <li>Limit impulse purchases at bodegas</li>
+  <li>Buy store brands when possible</li>
+</ul>
+
+<h2>Related NYC Money Guides</h2>
+<div id="related-posts"></div>
+
+</main>
+
+<footer>
+  <p>© 2026 NYC Money Guide</p>
+</footer>
+
+<script>
+fetch("../data/posts.json")
+  .then(res => res.json())
+  .then(posts => {
+    const currentCategories = ["cost","budgeting"];
+    const related = posts.filter(p =>
+      p.categories.some(c => currentCategories.includes(c))
+    ).slice(0,4);
+
+    const container = document.getElementById("related-posts");
+    related.forEach(post => {
+      container.innerHTML += `<p><a href="../${post.url}">${post.title}</a></p>`;
+    });
+  });
+</script>
+
+</body>
+</html>
