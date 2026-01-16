@@ -75,7 +75,73 @@
       margin-top:70px;
       font-size:14px;
     }
+    .calculator {
+  background:#F8FAFC;
+  border:1px solid #E2E8F0;
+  border-radius:14px;
+  padding:25px;
+  margin:50px 0;
+}
+.calculator h3 {
+  margin-bottom:15px;
+  color:#1A4F7A;
+}
+.calculator label {
+  font-weight:600;
+  display:block;
+  margin-top:15px;
+}
+.calculator select {
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #CBD5E1;
+  margin-top:5px;
+}
+.calc-result {
+  background:#EBF4FF;
+  padding:20px;
+  border-radius:10px;
+  margin-top:25px;
+  font-size:17px;
+}
+.calc-result strong {
+  color:#1A4F7A;
+}
+
   </style>
+  <script>
+function calculateGroceryCost() {
+  const household = document.getElementById("household").value;
+  const borough = document.getElementById("borough").value;
+  const style = document.getElementById("style").value;
+
+  let base = 350;
+
+  if (household == 2) base += 200;
+  if (household == 3) base += 400;
+  if (household >= 4) base += 550;
+
+  if (borough === "manhattan") base += 150;
+  if (borough === "brooklyn") base += 80;
+  if (borough === "queens") base += 40;
+  if (borough === "bronx") base -= 20;
+
+  if (style === "premium") base += 200;
+  if (style === "balanced") base += 80;
+
+  document.getElementById("result").innerHTML = `
+    <strong>Estimated Monthly Grocery Cost:</strong> $${base.toFixed(0)}<br>
+    <strong>Estimated Annual Cost:</strong> $${(base*12).toFixed(0)}<br><br>
+    Tip: Reducing dining out or switching stores can lower this by $100–$200/month.
+  `;
+}
+
+["household","borough","style"].forEach(id => {
+  document.getElementById(id).addEventListener("change", calculateGroceryCost);
+});
+</script>
+
 </head>
 
 <body>
@@ -303,6 +369,46 @@ due to its concentration of ethnic markets and competitive pricing.
 Manhattan remains the most expensive borough overall.
 </p>
 <h2>Example Monthly Grocery Budgets in NYC</h2>
+  <h2>Estimate Your Grocery Budget in NYC</h2>
+
+<p>
+Use the calculator below to estimate your monthly grocery cost
+based on your household, borough, and shopping habits.
+</p>
+
+<div class="calculator">
+
+  <h3>NYC Grocery Cost Calculator</h3>
+
+  <label>Household Size</label>
+  <select id="household">
+    <option value="1">Single</option>
+    <option value="2">Couple</option>
+    <option value="3">Family (3)</option>
+    <option value="4">Family (4+)</option>
+  </select>
+
+  <label>Borough</label>
+  <select id="borough">
+    <option value="manhattan">Manhattan</option>
+    <option value="brooklyn">Brooklyn</option>
+    <option value="queens">Queens</option>
+    <option value="bronx">Bronx</option>
+  </select>
+
+  <label>Shopping Style</label>
+  <select id="style">
+    <option value="budget">Budget-focused</option>
+    <option value="balanced">Balanced</option>
+    <option value="premium">Premium / Organic</option>
+  </select>
+
+  <div class="calc-result" id="result">
+    Adjust options to see your estimated grocery cost.
+  </div>
+
+</div>
+
 
 <p>
 To make these numbers more practical,
