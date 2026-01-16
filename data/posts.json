@@ -1,34 +1,34 @@
 [
   {
     "title": "How Much Rent Can You Afford in NYC?",
-    "summary": "Understand NYC rent rules, 30% rule reality, and survival budgeting.",
+    "summary": "Understand NYC rent rules, the 30% rule reality, and survival budgeting in New York City.",
     "categories": ["rent", "budgeting"],
     "url": "posts/how-much-rent.html",
-    "published": "January 2026",
+    "published": "Jan 2026",
     "readTime": "5 min"
   },
   {
     "title": "Best Credit Cards for NYC Immigrants",
-    "summary": "No SSN? No problem. Here’s how to build credit in New York.",
+    "summary": "No SSN? No problem. Learn how to build credit in New York City as an immigrant.",
     "categories": ["credit", "finance"],
     "url": "posts/best-credit-cards.html",
-    "published": "January 2026",
+    "published": "Jan 2026",
     "readTime": "4 min"
   },
   {
     "title": "NYC Cost of Living Breakdown (2026)",
-    "summary": "Realistic expenses for singles, couples, and families.",
+    "summary": "A realistic breakdown of monthly expenses in NYC for singles, couples, and families.",
     "categories": ["cost", "budgeting"],
     "url": "posts/nyc-cost-of-living.html",
-    "published": "January 2026",
+    "published": "Jan 2026",
     "readTime": "6 min"
   },
   {
     "title": "How Much Does Grocery Shopping Cost in NYC?",
-    "summary": "A borough-wise grocery cost comparison and monthly budget tips.",
-    "categories": ["budgeting", "cost"],
+    "summary": "A realistic breakdown of grocery shopping costs in NYC, including borough-wise prices, store comparisons, and monthly budget examples.",
+    "categories": ["cost", "budgeting"],
     "url": "posts/nyc-grocery-cost.html",
-    "published": "Feb 2026",
-    "readTime": "4 min"
+    "published": "Jan 2026",
+    "readTime": "7 min"
   }
 ]
