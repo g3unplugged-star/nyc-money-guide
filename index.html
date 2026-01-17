@@ -233,7 +233,7 @@ const recentPostsEl = document.getElementById('recentPosts');
 const popularPostsEl = document.getElementById('popularPosts');
 let postsData = [];
 
-fetch('data/posts.json')
+fetch('data/posts.json?v=202602')
   .then(res => res.json())
   .then(data => {
     postsData = data;
@@ -278,6 +278,7 @@ document.querySelectorAll('.category-filter button').forEach(btn=>{
 </script>
  </body>
 </html>
+
 
 
 
