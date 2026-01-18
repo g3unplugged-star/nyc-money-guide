@@ -357,6 +357,46 @@
 .toc a:hover {
   text-decoration: underline;
 }
+    .calculator {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 24px;
+  margin: 40px 0;
+}
+
+.calculator input[type="range"] {
+  width: 100%;
+  margin: 15px 0 25px;
+}
+
+.calc-result {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.calc-reality {
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.reality-tight {
+  background: #FEF2F2;
+  color: #991B1B;
+}
+
+.reality-balanced {
+  background: #ECFDF5;
+  color: #065F46;
+}
+
+.reality-warning {
+  background: #FFF7ED;
+  color: #9A3412;
+}
+
 
   </style>
 
@@ -625,50 +665,34 @@ This is why experienced New Yorkers often target rent
 below the maximum allowed — especially in their first year.
 </p>
 <!-- RENT CALCULATOR START -->
-<h2 id="calculator">NYC Rent Affordability Calculator</h2>
+<h2 id="calculator">NYC Rent Affordability Calculator (40x Rule)</h2>
 
 <div class="calculator">
-  <h3>Estimate Your Maximum NYC Rent</h3>
+  <h3>How Much Rent Will NYC Landlords Approve?</h3>
+
   <p>
-    Enter your annual gross income to see the rent
-    most NYC landlords will approve under the 40x rule.
+    This calculator uses NYC’s <strong>40x income rule</strong> to estimate
+    the <em>maximum rent landlords will approve</em> — and shows what actually
+    feels comfortable long-term.
   </p>
 
-  <div class="calc-grid">
-    <div class="calc-item">
-      <label for="income">Annual Gross Income ($)</label>
-      <select id="income">
-        <option value="60000">60,000</option>
-        <option value="80000">80,000</option>
-        <option value="100000">100,000</option>
-        <option value="120000">120,000</option>
-        <option value="150000">150,000</option>
-      </select>
-    </div>
-  </div>
+  <label for="incomeRange">
+    Annual Gross Income: <strong>$<span id="incomeValue">100,000</span></strong>
+  </label>
 
-  <div id="rentResult" class="calc-result">
-    Select your income to see rent affordability.
-  </div>
+  <input
+    type="range"
+    id="incomeRange"
+    min="40000"
+    max="200000"
+    step="5000"
+    value="100000"
+  />
 
-  <div class="calc-tip">
-    Tip: Target 10–20% below this number for long-term comfort.
-  </div>
+  <div id="rentResult" class="calc-result"></div>
+
+  <div id="rentReality" class="calc-reality"></div>
 </div>
-
-<script>
-document.getElementById("income").addEventListener("change", function () {
-  const income = Number(this.value);
-  const maxRent = Math.floor(income / 40);
-  const result = document.getElementById("rentResult");
-  result.innerHTML = `
-    <strong>Maximum Approved Rent:</strong> $${maxRent.toLocaleString()} / month
-    <br><br>
-    <strong>Comfort Range:</strong> $${Math.floor(maxRent * 0.8).toLocaleString()} – $${Math.floor(maxRent * 0.9).toLocaleString()}
-  `;
-  result.classList.add("highlight");
-});
-</script>
 <!-- RENT CALCULATOR END -->
 
 
@@ -908,6 +932,43 @@ backToTop.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+</script>
+<script>
+const range = document.getElementById("incomeRange");
+const incomeValue = document.getElementById("incomeValue");
+const rentResult = document.getElementById("rentResult");
+const rentReality = document.getElementById("rentReality");
+
+function updateCalculator() {
+  const income = Number(range.value);
+  const maxRent = Math.floor(income / 40);
+  const comfortLow = Math.floor(maxRent * 0.75);
+  const comfortHigh = Math.floor(maxRent * 0.85);
+
+  incomeValue.textContent = income.toLocaleString();
+
+  rentResult.innerHTML = `
+    Max Approved Rent: <strong>$${maxRent.toLocaleString()}</strong> / month<br>
+    Comfortable Range: <strong>$${comfortLow.toLocaleString()} – $${comfortHigh.toLocaleString()}</strong>
+  `;
+
+  if (maxRent > comfortHigh * 1.15) {
+    rentReality.className = "calc-reality reality-warning";
+    rentReality.innerHTML =
+      "⚠️ This rent will likely feel tight once utilities, groceries, and transit are added.";
+  } else if (maxRent < comfortLow * 1.05) {
+    rentReality.className = "calc-reality reality-tight";
+    rentReality.innerHTML =
+      "🚨 This rent leaves little margin for savings or emergencies in NYC.";
+  } else {
+    rentReality.className = "calc-reality reality-balanced";
+    rentReality.innerHTML =
+      "✅ This range is generally sustainable for most NYC renters.";
+  }
+}
+
+range.addEventListener("input", updateCalculator);
+updateCalculator();
 </script>
 
 </body>
