@@ -417,7 +417,7 @@ especially in Manhattan and high-demand Brooklyn neighborhoods.
 
 <hr>
 
-<h2>Rent Costs in NYC</h2>
+<h2 id="rent">Rent Costs in NYC</h2>
 
 <p>
 Rent is the single largest expense for most New Yorkers
@@ -446,7 +446,7 @@ see our detailed guide:
 
 <hr>
 
-<h2>Grocery Costs in NYC</h2>
+<h2 id="groceries">Grocery Costs in NYC</h2>
 
 <p>
 Groceries are usually the second-largest monthly expense for NYC residents.
@@ -476,7 +476,8 @@ and a personalized calculator — see:
 
 <hr>
 
-<h2>Transportation Costs in NYC</h2>
+<h2 id="transport">Transportation Costs in NYC</h2>
+
 
 <p>
 Transportation costs in NYC depend heavily on whether you rely on public transit
@@ -496,7 +497,8 @@ instead of owning a vehicle.
 
 <hr>
 
-<h2>Utilities & Internet</h2>
+<h2 id="utilities">Utilities & Internet</h2>
+
 
 <p>
 Utilities are often overlooked but add up quickly,
@@ -516,7 +518,7 @@ which can significantly reduce winter expenses.
 
 <hr>
 
-<h2>Healthcare & Insurance</h2>
+<h2 id="healthcare">Healthcare & Insurance</h2>
 
 <p>
 Healthcare costs vary widely depending on employment benefits and insurance plans.
@@ -535,7 +537,7 @@ unexpected medical expenses can derail finances quickly.
 
 <hr>
 
-<h2>Sample Monthly Budgets (NYC)</h2>
+<h2 id="budget">Sample Monthly Budgets (NYC)</h2>
 
 <table>
 <tr>
@@ -558,7 +560,8 @@ unexpected medical expenses can derail finances quickly.
 
 <hr>
 
-<h2>Is Living in NYC Worth the Cost?</h2>
+<h2 id="saving">Is Living in NYC Worth the Cost?</h2>
+
 
 <p>
 While NYC is undeniably expensive,
@@ -592,69 +595,38 @@ to reflect current NYC cost-of-living trends.
   <p>© 2026 NYC Money Guide</p>
 </footer>
 
-<script>
-fetch("../data/posts.json")
-  .then(res => res.json())
-  .then(posts => {
-    const currentCategories = ["cost","budgeting"];
-    const related = posts.filter(p =>
-      p.categories.some(c => currentCategories.includes(c))
-    ).slice(0,4);
-
-    const container = document.getElementById("related-posts");
-    related.forEach(post => {
-      container.innerHTML += `<p><a href="../${post.url}">${post.title}</a></p>`;
-    });
-  });
-</script>
-  <script>
-function calculateGroceryCost() {
-  const household = document.getElementById("household").value;
-  const borough = document.getElementById("borough").value;
-  const style = document.getElementById("style").value;
-  const resultBox = document.getElementById("result");
-
-  let base = 350;
-
-  if (household == 2) base += 200;
-  if (household == 3) base += 400;
-  if (household >= 4) base += 550;
-
-  if (borough === "manhattan") base += 150;
-  if (borough === "brooklyn") base += 80;
-  if (borough === "queens") base += 40;
-  if (borough === "bronx") base -= 20;
-
-  if (style === "premium") base += 200;
-  if (style === "balanced") base += 80;
-
-  resultBox.classList.remove("highlight");
-  void resultBox.offsetWidth; // restart animation
-  resultBox.classList.add("highlight");
-
-  resultBox.innerHTML = `
-    <strong>💰 Estimated Monthly Grocery Cost:</strong> $${base.toFixed(0)}<br>
-    <strong>📆 Estimated Annual Cost:</strong> $${(base * 12).toFixed(0)}
-    <div class="calc-tip">
-      💡 Tip: Shopping at ethnic markets or reducing food delivery
-      can lower this by <strong>$100–$200/month</strong>.
-    </div>
-  `;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to live in NYC per month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most adults living in New York City spend between $3,500 and $6,500 per month depending on rent, lifestyle, and household size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the biggest expense when living in NYC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rent is the single largest expense for most New Yorkers, often consuming 40–60% of monthly income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is NYC more expensive than other US cities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. NYC operates on a different cost structure than most US cities, with higher rent, food, and convenience pricing."
+      }
+    }
+  ]
 }
-
-["household", "borough", "style"].forEach(id => {
-  document.getElementById(id).addEventListener("change", calculateGroceryCost);
-});
 </script>
-<script>
-document.querySelectorAll(".faq-question").forEach(item => {
-  item.addEventListener("click", () => {
-    const parent = item.parentElement;
-    parent.classList.toggle("active");
-  });
-});
-</script>
-
 
 </body>
 </html>
