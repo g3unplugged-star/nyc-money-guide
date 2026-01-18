@@ -360,6 +360,8 @@
       text-align: left;
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
     }
     
     .tool-card:hover {
@@ -387,6 +389,7 @@
       color: var(--text-secondary);
       margin: 0 0 1.25rem;
       line-height: 1.5;
+      flex-grow: 1;
     }
     
     .download-btn {
@@ -401,8 +404,9 @@
       border: none;
       cursor: pointer;
       font-size: 0.9rem;
-      width: 100%;
       text-align: center;
+      width: 100%;
+      box-sizing: border-box;
     }
     
     .download-btn:hover {
@@ -445,6 +449,7 @@
       font-size: 1rem;
       font-family: 'Inter', sans-serif;
       transition: border-color 0.3s ease;
+      box-sizing: border-box;
     }
     
     .form-group input:focus {
