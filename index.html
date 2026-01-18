@@ -1156,106 +1156,115 @@
 <script>
   // ===== BLOG POSTS DATA =====
   const blogPosts = [
-    {
-      id: 1,
-      title: "NYC Rent Affordability: The 40x Rule Explained (2026 Update)",
-      excerpt: "Complete guide to NYC's rent affordability rules, including the 40x salary requirement, guarantor options, and borough-specific exceptions.",
-      category: "rent",
-      readTime: "12 min",
-      date: "Mar 15, 2026",
-      tags: ["rent", "housing", "nyc rules"],
-      trending: true,
-      recent: true
-    },
-    {
-      id: 2,
-      title: "How to Build Credit from Scratch in NYC (Even Without Rent History)",
-      excerpt: "Step-by-step guide to building credit in New York City using secured cards, rent reporting services, and alternative credit data.",
-      category: "credit",
-      readTime: "10 min",
-      date: "Mar 12, 2026",
-      tags: ["credit", "debt", "financial health"],
-      trending: true,
-      recent: true
-    },
-    {
-      id: 3,
-      title: "Complete NYC Budget Breakdown: Where Does Your Money Actually Go?",
-      excerpt: "Real-world budget analysis for single professionals, couples, and families living in different NYC boroughs.",
-      category: "budgeting",
-      readTime: "15 min",
-      date: "Mar 8, 2026",
-      tags: ["budgeting", "expenses", "nyc life"],
-      trending: true,
-      recent: true
-    },
-    {
-      id: 4,
-      title: "Bronx vs. Queens vs. Brooklyn: 2026 Cost Comparison",
-      excerpt: "Detailed borough-by-borough cost analysis including rent, groceries, transportation, and hidden expenses you need to know.",
-      category: "cost",
-      readTime: "14 min",
-      date: "Mar 5, 2026",
-      tags: ["cost of living", "boroughs", "comparison"],
-      trending: false,
-      recent: true
-    },
-    {
-      id: 5,
-      title: "High-Yield Savings Accounts for NYC Residents (2026 Guide)",
-      excerpt: "Best savings accounts and cash management strategies for New Yorkers looking to maximize their emergency funds.",
-      category: "savings",
-      readTime: "8 min",
-      date: "Mar 1, 2026",
-      tags: ["savings", "investing", "banking"],
-      trending: false,
-      recent: true
-    },
-    {
-      id: 6,
-      title: "Negotiating Rent in NYC: When and How to Ask for Lower Rent",
-      excerpt: "Practical strategies for rent negotiation, including timing, market research, and what to say to your landlord.",
-      category: "rent",
-      readTime: "11 min",
-      date: "Feb 26, 2026",
-      tags: ["rent", "negotiation", "saving money"],
-      trending: true,
-      recent: true
-    },
-    {
-      id: 7,
-      title: "NYC Grocery Costs: Trader Joe's vs. Whole Foods vs. Local Markets",
-      excerpt: "Price comparison and shopping strategies to save $200-400 monthly on groceries across different NYC neighborhoods.",
-      category: "cost",
-      readTime: "9 min",
-      date: "Feb 22, 2026",
-      tags: ["groceries", "saving money", "cost of living"],
-      trending: false,
-      recent: false
-    },
-    {
-      id: 8,
-      title: "Student Loan Repayment Strategies for NYC Professionals",
-      excerpt: "Income-driven repayment plans, forgiveness programs, and budgeting strategies for managing student debt in high-cost NYC.",
-      category: "credit",
-      readTime: "13 min",
-      date: "Feb 18, 2026",
-      tags: ["student loans", "debt", "financial planning"],
-      trending: false,
-      recent: false
-    },
-    {
-      id: 9,
-      title: "Side Hustles That Actually Pay in NYC (2026 Opportunities)",
-      excerpt: "Realistic side income opportunities for New Yorkers, from freelance work to local gig economy jobs.",
-      category: "savings",
-      readTime: "10 min",
-      date: "Feb 15, 2026",
-      tags: ["side hustles", "extra income", "nyc jobs"],
-      trending: true,
-      recent: false
-    }
-  ];
+  {
+    id: 1,
+    title: "NYC Rent Affordability: The 40x Rule Explained (2026 Update)",
+    slug: "nyc-rent-affordability-40x-rule-explained-2026",
+    excerpt: "Complete guide to NYC's rent affordability rules, including the 40x salary requirement, guarantor options, and borough-specific exceptions.",
+    category: "rent",
+    readTime: "12 min",
+    date: "Mar 15, 2026",
+    tags: ["rent", "housing", "nyc rules"],
+    trending: true,
+    recent: true
+  },
+  {
+    id: 2,
+    title: "How to Build Credit from Scratch in NYC (Even Without Rent History)",
+    slug: "build-credit-from-scratch-nyc-no-rent-history",
+    excerpt: "Step-by-step guide to building credit in New York City using secured cards, rent reporting services, and alternative credit data.",
+    category: "credit",
+    readTime: "10 min",
+    date: "Mar 12, 2026",
+    tags: ["credit", "debt", "financial health"],
+    trending: true,
+    recent: true
+  },
+  {
+    id: 3,
+    title: "Complete NYC Budget Breakdown: Where Does Your Money Actually Go?",
+    slug: "complete-nyc-budget-breakdown-where-money-goes",
+    excerpt: "Real-world budget analysis for single professionals, couples, and families living in different NYC boroughs.",
+    category: "budgeting",
+    readTime: "15 min",
+    date: "Mar 8, 2026",
+    tags: ["budgeting", "expenses", "nyc life"],
+    trending: true,
+    recent: true
+  },
+  {
+    id: 4,
+    title: "Bronx vs. Queens vs. Brooklyn: 2026 Cost Comparison",
+    slug: "bronx-queens-brooklyn-2026-cost-comparison",
+    excerpt: "Detailed borough-by-borough cost analysis including rent, groceries, transportation, and hidden expenses you need to know.",
+    category: "cost",
+    readTime: "14 min",
+    date: "Mar 5, 2026",
+    tags: ["cost of living", "boroughs", "comparison"],
+    trending: false,
+    recent: true
+  },
+  {
+    id: 5,
+    title: "High-Yield Savings Accounts for NYC Residents (2026 Guide)",
+    slug: "high-yield-savings-accounts-nyc-residents-2026",
+    excerpt: "Best savings accounts and cash management strategies for New Yorkers looking to maximize their emergency funds.",
+    category: "savings",
+    readTime: "8 min",
+    date: "Mar 1, 2026",
+    tags: ["savings", "investing", "banking"],
+    trending: false,
+    recent: true
+  },
+  {
+    id: 6,
+    title: "Negotiating Rent in NYC: When and How to Ask for Lower Rent",
+    slug: "negotiating-rent-nyc-how-to-ask-lower-rent",
+    excerpt: "Practical strategies for rent negotiation, including timing, market research, and what to say to your landlord.",
+    category: "rent",
+    readTime: "11 min",
+    date: "Feb 26, 2026",
+    tags: ["rent", "negotiation", "saving money"],
+    trending: true,
+    recent: true
+  },
+  {
+    id: 7,
+    title: "NYC Grocery Costs: Trader Joe's vs. Whole Foods vs. Local Markets",
+    slug: "nyc-grocery-costs-trader-joes-whole-foods-local-markets",
+    excerpt: "Price comparison and shopping strategies to save $200-400 monthly on groceries across different NYC neighborhoods.",
+    category: "cost",
+    readTime: "9 min",
+    date: "Feb 22, 2026",
+    tags: ["groceries", "saving money", "cost of living"],
+    trending: false,
+    recent: false
+  },
+  {
+    id: 8,
+    title: "Student Loan Repayment Strategies for NYC Professionals",
+    slug: "student-loan-repayment-strategies-nyc-professionals",
+    excerpt: "Income-driven repayment plans, forgiveness programs, and budgeting strategies for managing student debt in high-cost NYC.",
+    category: "credit",
+    readTime: "13 min",
+    date: "Feb 18, 2026",
+    tags: ["student loans", "debt", "financial planning"],
+    trending: false,
+    recent: false
+  },
+  {
+    id: 9,
+    title: "Side Hustles That Actually Pay in NYC (2026 Opportunities)",
+    slug: "side-hustles-that-actually-pay-nyc-2026",
+    excerpt: "Realistic side income opportunities for New Yorkers, from freelance work to local gig economy jobs.",
+    category: "savings",
+    readTime: "25 min",
+    date: "Feb 15, 2026",
+    tags: ["side hustles", "extra income", "nyc jobs"],
+    trending: true,
+    recent: false
+  }
+];
 
   // ===== DOM ELEMENTS =====
   const postsGrid = document.getElementById('postsGrid');
@@ -1535,3 +1544,4 @@
 </script>
 </body>
 </html>
+
