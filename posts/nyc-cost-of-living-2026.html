@@ -231,6 +231,64 @@
   from {opacity:0; transform:translateY(15px);}
   to {opacity:1; transform:translateY(0);}
 }
+    /* ===== HERO HEADER ===== */
+.hero {
+  background: linear-gradient(135deg, #EFF6FF, #FFFFFF);
+  border-bottom: 1px solid #E5E7EB;
+  padding: 60px 0 50px;
+}
+
+.hero-inner {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #475569;
+  max-width: 720px;
+  margin-bottom: 25px;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 14px;
+  color: #64748B;
+}
+
+.hero-meta span {
+  background: #F1F5F9;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.hero-cta {
+  margin-top: 30px;
+}
+
+.hero-cta a {
+  display: inline-block;
+  background: #1A4F7A;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.hero-cta a:hover {
+  opacity: 0.9;
+}
+
   </style>
 
 </head>
@@ -243,9 +301,31 @@
 
 <main class="container">
 
-<h1>How Much Does It Cost to Live in NYC in 2026? (Real Monthly Budget)</h1>
+<section class="hero">
+  <div class="hero-inner">
 
-<p><strong>Last updated:</strong> February 2026 · 8–9 minute read</p>
+    <h1>How Much Does It Cost to Live in NYC in 2026?</h1>
+
+    <p class="hero-subtitle">
+      A realistic, NYC-specific breakdown of rent, groceries, transportation,
+      utilities, healthcare, and real monthly budgets — based on how New Yorkers
+      actually live, not national averages.
+    </p>
+
+    <div class="hero-meta">
+      <span>📍 NYC-specific</span>
+      <span>📊 Real budgets</span>
+      <span>🕒 Updated Feb 2026</span>
+      <span>📖 ~15 min read</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#rent">Jump to rent & costs ↓</a>
+    </div>
+
+  </div>
+</section>
+
   
 <nav class="toc">
   <h3>📌 What this guide covers</h3>
