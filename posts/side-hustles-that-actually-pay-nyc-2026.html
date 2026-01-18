@@ -96,6 +96,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* ADDED: Prevents content from hiding under fixed header */
     }
 
     body {
@@ -123,15 +124,23 @@
       padding: 0 15px;
     }
 
-    /* ===== HEADER ===== */
+    /* ===== IMPROVED HEADER ===== */
     header {
       background: var(--primary);
       color: white;
       padding: 18px 0;
-      position: sticky;
+      position: fixed; /* CHANGED: From sticky to fixed for better control */
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease; /* ADDED: For hide/show on scroll */
+    }
+
+    /* ADDED: Hide header when scrolling down, show when scrolling up */
+    header.hidden {
+      transform: translateY(-100%);
     }
 
     nav {
@@ -187,6 +196,7 @@
       background: var(--sidebar-bg);
       margin-bottom: 30px;
       font-size: 14px;
+      margin-top: 80px; /* ADDED: Push down for fixed header */
     }
 
     .breadcrumbs a {
@@ -266,6 +276,9 @@
       border-radius: var(--radius-md);
       margin: 40px 0;
       border-left: 4px solid var(--accent);
+      position: sticky;
+      top: 100px; /* ADDED: Sticks below header */
+      z-index: 100;
     }
 
     .toc h3 {
@@ -293,11 +306,50 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      padding: 6px 0;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
     }
 
     .toc a:hover {
       color: var(--accent);
       transform: translateX(5px);
+      background: rgba(255, 127, 80, 0.05);
+      padding-left: 10px;
+    }
+
+    /* ===== BACK TO TOP BUTTON ===== */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #backToTop:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
     }
 
     /* ===== CONTENT SECTIONS ===== */
@@ -307,6 +359,8 @@
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
       margin-bottom: 40px;
+      /* ADDED: Section anchor spacing */
+      scroll-margin-top: 120px;
     }
 
     .content-section h2 {
@@ -316,10 +370,21 @@
       padding-bottom: 15px;
       border-bottom: 2px solid var(--border);
       font-weight: 700;
+      /* ADDED: Better anchor spacing */
+      scroll-margin-top: 120px;
     }
 
     .content-section h2:first-child {
       margin-top: 0;
+    }
+
+    .content-section h2:before {
+      content: "";
+      display: block;
+      height: 120px; /* ADDED: Space for fixed header */
+      margin-top: -120px;
+      visibility: hidden;
+      pointer-events: none;
     }
 
     .content-section h3 {
@@ -327,6 +392,7 @@
       color: var(--primary);
       margin: 30px 0 15px;
       font-weight: 600;
+      scroll-margin-top: 120px;
     }
 
     .content-section h4 {
@@ -350,6 +416,16 @@
     .content-section li {
       margin-bottom: 12px;
       line-height: 1.7;
+    }
+
+    /* ADDED: Improved readability for long content */
+    .content-section {
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .content-section p, .content-section li {
+      margin-bottom: 1.5em;
     }
 
     /* ===== SPECIAL BOXES ===== */
@@ -645,6 +721,24 @@
       .borough-comparison {
         grid-template-columns: 1fr;
       }
+      
+      .toc {
+        position: relative;
+        top: 0;
+      }
+      
+      html {
+        scroll-padding-top: 60px;
+      }
+      
+      .breadcrumbs {
+        margin-top: 60px;
+      }
+      
+      .content-section h2:before {
+        height: 80px;
+        margin-top: -80px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -666,6 +760,13 @@
       
       .related-grid {
         grid-template-columns: 1fr;
+      }
+      
+      #backToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
       }
     }
   </style>
@@ -1327,6 +1428,11 @@
   </div>
 </footer>
 
+<!-- Back to Top Button -->
+<button id="backToTop">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
 <script>
   // Update copyright year
   document.addEventListener('DOMContentLoaded', function() {
@@ -1336,18 +1442,85 @@
     }
     
     // Smooth scroll for table of contents links
-    document.querySelectorAll('.toc a').forEach(anchor => {
+    document.querySelectorAll('.toc a, .related-card a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: 'smooth'
-          });
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
         }
       });
+    });
+  });
+
+  // Smart header hide/show on scroll
+  let lastScrollTop = 0;
+  const header = document.querySelector('header');
+  const headerHeight = header.offsetHeight;
+  
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Show/hide header based on scroll direction
+    if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
+      // Scrolling down - hide header
+      header.classList.add('hidden');
+    } else {
+      // Scrolling up - show header
+      header.classList.remove('hidden');
+    }
+    
+    lastScrollTop = scrollTop;
+    
+    // Show/hide back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    if (scrollTop > 500) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  // Back to top button functionality
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // TOC active link highlighting
+  const sections = document.querySelectorAll('.content-section h2');
+  const tocLinks = document.querySelectorAll('.toc a');
+  
+  window.addEventListener('scroll', function() {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= (sectionTop - 150)) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    tocLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+        link.style.color = 'var(--accent)';
+        link.style.fontWeight = '600';
+      } else {
+        link.style.color = '';
+        link.style.fontWeight = '';
+      }
     });
   });
 </script>
