@@ -1598,6 +1598,16 @@ to reflect current NYC cost-of-living trends.
 <footer>
   <p>© 2026 NYC Money Guide</p>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".faq-question").forEach(question => {
+    question.addEventListener("click", () => {
+      const item = question.parentElement;
+      item.classList.toggle("active");
+    });
+  });
+});
+</script>
 
 </body>
 </html>
