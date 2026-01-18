@@ -3,34 +3,764 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – NYC Money Guide</title>
-  <meta name="description" content="Contact NYC Money Guide – get in touch for feedback, collaborations or inquiries.">
+  
+  <!-- Primary Meta Tags -->
+  <title>Contact NYC Money Guide – Feedback, Partnerships & Financial Questions</title>
+  <meta name="description" content="Contact NYC Money Guide for financial questions, partnership opportunities, media inquiries, or feedback. We help New Yorkers navigate NYC's unique financial landscape.">
+  <meta name="keywords" content="contact NYC financial advice, NYC money questions, New York finance partnerships, media inquiry NYC finance, feedback NYC budgeting, collaborate with NYC Money Guide">
+  <meta name="author" content="NYC Money Guide">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact NYC Money Guide – Financial Questions & Partnerships" />
+  <meta property="og:description" content="Get in touch with NYC Money Guide for financial advice, partnership opportunities, or media inquiries. Helping New Yorkers save money and build financial confidence." />
+  <meta property="og:image" content="https://g3unplugged-star.github.io/nyc-money-guide/images/contact-og.jpg" />
+  <meta property="og:url" content="https://g3unplugged-star.github.io/nyc-money-guide/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NYC Money Guide" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact NYC Money Guide – Financial Questions & Partnerships" />
+  <meta name="twitter:description" content="Get in touch for NYC financial advice, partnerships, or media inquiries." />
+  <meta name="twitter:image" content="https://g3unplugged-star.github.io/nyc-money-guide/images/contact-twitter.jpg" />
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://g3unplugged-star.github.io/nyc-money-guide/contact.html" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact NYC Money Guide",
+    "description": "Contact page for NYC Money Guide financial advice website",
+    "url": "https://g3unplugged-star.github.io/nyc-money-guide/contact.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "NYC Money Guide",
+      "email": "contact@nycmoneyguide.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@nycmoneyguide.com",
+        "availableLanguage": "English"
+      }
+    }
+  }
+  </script>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    * {box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Inter',sans-serif;background:#FAFAFB;color:#111827;line-height:1.8;padding-bottom:50px;}
-    a{text-decoration:none;color:#2563EB;}
+    /* ===== CSS VARIABLES (Matching Main Site) ===== */
+    :root {
+      --primary: #1A4F7A;
+      --primary-dark: #163D5F;
+      --secondary: #2563EB;
+      --accent: #FF7F50;
+      --accent-dark: #E66938;
+      --light-bg: #FAFAFB;
+      --card-bg: #FFFFFF;
+      --sidebar-bg: #F8FAFC;
+      --text-primary: #111827;
+      --text-secondary: #475569;
+      --text-light: #64748B;
+      --border: #E5E7EB;
+      --success: #059669;
+      --error: #DC2626;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+      --shadow-md: 0 6px 18px rgba(0,0,0,0.07);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
 
-    /* HEADER */
-    header{background:#1A4F7A;color:white;padding:18px 0;}
-    .container{width:90%;max-width:1000px;margin:auto;}
-    nav{display:flex;justify-content:space-between;align-items:center;}
-    nav h1 a{color:white;text-decoration:none;font-size:26px;font-weight:700;}
-    nav ul{list-style:none;display:flex;gap:20px;}
-    nav ul li a{color:#F7FAFC;font-weight:500;padding:5px 8px;border-radius:5px;}
-    nav ul li a:hover{background:#FF7F50;color:white;}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    /* PAGE CONTENT */
-    .page-header{padding:40px 0;text-align:center;}
-    .page-header h2{font-size:32px;color:#1A4F7A;margin-bottom:10px;}
-    .page-content{background:white;padding:30px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
-    .page-content p{margin-bottom:18px;font-size:16px;color:#475569;}
-    .contact-info{margin-top:20px;font-weight:600;}
+    html {
+      scroll-behavior: smooth;
+    }
 
-    footer{background:#1A4F7A;color:#F7FAFC;text-align:center;padding:18px 0;margin-top:40px;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* ===== HEADER (Matching Main Site) ===== */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    nav h1 a {
+      color: white;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-tagline {
+      font-size: 14px;
+      color: #CBD5E1;
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: #F7FAFC;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav ul li a:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    nav ul li a.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ===== CONTACT HERO ===== */
+    .contact-hero {
+      background: linear-gradient(135deg, #F0F9FF, #FEF7FF);
+      padding: 70px 0 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 127, 80, 0.08) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .contact-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-hero h1 {
+      font-size: 42px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .contact-hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== CONTACT GRID ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 60px 0;
+    }
+
+    /* ===== CONTACT FORM ===== */
+    .contact-form-section {
+      background: white;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header h2 i {
+      color: var(--accent);
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.2);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:disabled {
+      background: var(--text-light);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .form-message {
+      padding: 15px;
+      border-radius: var(--radius-md);
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .form-message.success {
+      background: #D1FAE5;
+      color: var(--success);
+      border: 1px solid #A7F3D0;
+      display: block;
+    }
+
+    .form-message.error {
+      background: #FEE2E2;
+      color: var(--error);
+      border: 1px solid #FECACA;
+      display: block;
+    }
+
+    /* ===== CONTACT INFO ===== */
+    .contact-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .contact-card-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 127, 80, 0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .contact-card h3 {
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .contact-details {
+      list-style: none;
+    }
+
+    .contact-details li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-details li i {
+      color: var(--accent);
+      margin-top: 3px;
+      font-size: 16px;
+    }
+
+    .contact-details a {
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+
+    .contact-details a:hover {
+      color: var(--accent);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--sidebar-bg);
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ===== FAQ SECTION ===== */
+    .faq-section {
+      padding: 60px 0;
+      background: var(--sidebar-bg);
+    }
+
+    .faq-section .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .faq-section .section-header h2 {
+      justify-content: center;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 15px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .faq-question {
+      padding: 20px 25px;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: #F8FAFC;
+    }
+
+    .faq-question i {
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: var(--text-secondary);
+    }
+
+    .faq-answer.active {
+      padding: 0 25px 25px;
+      max-height: 500px;
+    }
+
+    /* ===== PARTNERSHIP CTA ===== */
+    .partnership-cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 60px 40px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .partnership-cta h2 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .partnership-cta p {
+      color: #E2E8F0;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 18px;
+    }
+
+    .partnership-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .partnership-type {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .partnership-type:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .partnership-type i {
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .partnership-type h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .partnership-type p {
+      color: #CBD5E1;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 15px 30px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid white;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #F7FAFC;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section h4 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-section ul li a {
+      color: #CBD5E1;
+      transition: all 0.2s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #94A3B8;
+      font-size: 14px;
+    }
+
+    .copyright a {
+      color: #CBD5E1;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      .contact-hero h1 {
+        font-size: 36px;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: 50px 0 30px;
+      }
+      
+      .contact-hero h1 {
+        font-size: 32px;
+      }
+      
+      .contact-hero p {
+        font-size: 16px;
+      }
+      
+      .contact-form-section,
+      .contact-card {
+        padding: 25px;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        padding: 20px;
+        box-shadow: var(--shadow-lg);
+      }
+      
+      nav ul.show {
+        display: flex;
+      }
+      
+      .partnership-cta {
+        padding: 40px 20px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-hero h1 {
+        font-size: 28px;
+      }
+      
+      .contact-form-section,
+      .contact-card {
+        padding: 20px;
+      }
+      
+      .partnership-types {
+        grid-template-columns: 1fr;
+      }
+      
+      .faq-question {
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -38,33 +768,563 @@
 <header>
   <div class="container">
     <nav>
-      <h1><a href="index.html">NYC Money Guide</a></h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#blog">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-building-columns"></i>
+        </div>
+        <div>
+          <h1><a href="index.html">NYC Money Guide</a></h1>
+          <div class="brand-tagline">Practical financial clarity for life in New York City</div>
+        </div>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul id="navMenu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html#blog"><i class="fas fa-newspaper"></i> Blog</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#partnerships"><i class="fas fa-handshake"></i> Partnerships</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<div class="container">
-  <div class="page-header">
-    <h2>Contact NYC Money Guide</h2>
-    <p>We’d love to hear from you! Reach out for feedback, collaborations, or inquiries.</p>
+<section class="contact-hero">
+  <div class="container">
+    <div class="contact-hero-content">
+      <h1>Get in Touch With NYC Money Guide</h1>
+      <p>Have questions about NYC finances? Interested in partnerships? We're here to help New Yorkers navigate the city's unique financial landscape.</p>
+    </div>
   </div>
-  <div class="page-content">
-    <p class="contact-info">Email: <a href="mailto:contact@nycmoneyguide.com">contact@nycmoneyguide.com</a></p>
-    <p class="contact-info">Follow us on social media for updates and news.</p>
+</section>
+
+<div class="container">
+  <div class="contact-grid">
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+      <div class="section-header">
+        <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+        <p>Fill out the form below and we'll get back to you within 24-48 hours.</p>
+      </div>
+      
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="contactReason">Reason for Contact *</label>
+          <select id="contactReason" name="reason" required>
+            <option value="">Select a reason</option>
+            <option value="general">General Inquiry</option>
+            <option value="financial-question">Financial Question</option>
+            <option value="partnership">Partnership Opportunity</option>
+            <option value="media">Media Inquiry</option>
+            <option value="feedback">Website Feedback</option>
+            <option value="sponsorship">Advertising/Sponsorship</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="name" required placeholder="Your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="borough">NYC Borough (Optional)</label>
+          <select id="borough" name="borough">
+            <option value="">Not applicable</option>
+            <option value="manhattan">Manhattan</option>
+            <option value="brooklyn">Brooklyn</option>
+            <option value="queens">Queens</option>
+            <option value="bronx">Bronx</option>
+            <option value="staten-island">Staten Island</option>
+            <option value="outside-nyc">Outside NYC</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea id="message" name="message" required placeholder="How can we help you today? Please include relevant details about your NYC financial situation or inquiry."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="newsletter" checked>
+            <span style="margin-left: 8px;">Subscribe to our newsletter for weekly NYC money-saving tips</span>
+          </label>
+        </div>
+        
+        <button type="submit" class="btn-primary" id="submitBtn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        
+        <div class="form-message" id="formMessage"></div>
+      </form>
+    </section>
+
+    <!-- Contact Information -->
+    <div class="contact-info-section">
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email & Social</h3>
+        </div>
+        
+        <ul class="contact-details">
+          <li>
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>General Inquiries:</strong><br>
+              <a href="mailto:contact@nycmoneyguide.com">contact@nycmoneyguide.com</a>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-briefcase"></i>
+            <div>
+              <strong>Partnerships:</strong><br>
+              <a href="mailto:partnerships@nycmoneyguide.com">partnerships@nycmoneyguide.com</a>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-newspaper"></i>
+            <div>
+              <strong>Media Inquiries:</strong><br>
+              <a href="mailto:press@nycmoneyguide.com">press@nycmoneyguide.com</a>
+            </div>
+          </li>
+        </ul>
+        
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Response Times</h3>
+        </div>
+        
+        <ul class="contact-details">
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <strong>General Inquiries:</strong><br>
+              24-48 hours
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <strong>Financial Questions:</strong><br>
+              2-3 business days
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <strong>Partnership Proposals:</strong><br>
+              3-5 business days
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+              <strong>Urgent Matters:</strong><br>
+              Please email with "URGENT" in subject line
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-icon">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <h3>Important Notes</h3>
+        </div>
+        
+        <ul class="contact-details">
+          <li>
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <strong>Privacy:</strong><br>
+              We never share your personal information
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-balance-scale"></i>
+            <div>
+              <strong>Disclaimer:</strong><br>
+              We provide educational content, not personalized financial advice
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-file-alt"></i>
+            <div>
+              <strong>Attachments:</strong><br>
+              Limit file attachments to 5MB total
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+      <p>Quick answers to common questions about contacting NYC Money Guide</p>
+    </div>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can you provide personalized financial advice for my specific NYC situation?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>While we provide general educational content about NYC finances, we cannot provide personalized financial advice. For specific financial planning, we recommend consulting with a certified financial planner or advisor licensed in New York State. However, we can direct you to helpful resources and general strategies that apply to common NYC financial situations.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What types of partnerships do you offer for brands?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We offer several partnership opportunities including sponsored content, affiliate partnerships, display advertising, and collaborative guides. We only partner with brands that align with our mission of helping New Yorkers save money and improve their financial health. All partnerships are clearly disclosed to our readers. Visit our <a href="about.html#partnerships">Partnerships page</a> for more information.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How long does it take to get a response to my inquiry?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We aim to respond to all inquiries within 24-48 hours during business days (Monday-Friday). Partnership and media inquiries may take 3-5 business days as they often require review by multiple team members. If you haven't heard back within this timeframe, please check your spam folder or resend your message with "FOLLOW-UP" in the subject line.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you accept guest posts or content submissions?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We occasionally accept guest posts from financial experts, NYC professionals, and writers with unique perspectives on NYC living and finances. All submissions must meet our editorial standards and provide genuine value to our NYC-based audience. Please email your pitch to <a href="mailto:submissions@nycmoneyguide.com">submissions@nycmoneyguide.com</a> with writing samples and topic ideas.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I suggest a topic for a future article or guide?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! We welcome topic suggestions from our readers. Many of our most popular articles started as reader suggestions. When suggesting topics, please be as specific as possible about the NYC financial challenge or question you'd like us to address. Include details about your borough, income range, or specific situation if relevant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partnerships" class="partnership-cta">
+  <div class="container">
+    <h2>Partner With NYC Money Guide</h2>
+    <p>Join forces with NYC's most trusted financial resource. We collaborate with brands that help New Yorkers save money, build credit, and achieve financial stability.</p>
+    
+    <div class="partnership-types">
+      <div class="partnership-type">
+        <i class="fas fa-ad"></i>
+        <h3>Advertising</h3>
+        <p>Reach our engaged audience of NYC residents actively seeking financial guidance and solutions.</p>
+      </div>
+      
+      <div class="partnership-type">
+        <i class="fas fa-link"></i>
+        <h3>Affiliate Program</h3>
+        <p>Partner with us to promote financial products and services we genuinely recommend to our readers.</p>
+      </div>
+      
+      <div class="partnership-type">
+        <i class="fas fa-handshake"></i>
+        <h3>Sponsored Content</h3>
+        <p>Collaborate on educational content that provides genuine value while showcasing your brand.</p>
+      </div>
+      
+      <div class="partnership-type">
+        <i class="fas fa-users"></i>
+        <h3>Community Events</h3>
+        <p>Co-host financial literacy workshops, webinars, or community events for NYC residents.</p>
+      </div>
+    </div>
+    
+    <div class="cta-buttons">
+      <a href="mailto:partnerships@nycmoneyguide.com?subject=Partnership Inquiry" class="btn-primary">
+        <i class="fas fa-briefcase"></i> Email Partnership Team
+      </a>
+      <a href="about.html#monetization" class="btn-secondary">
+        <i class="fas fa-info-circle"></i> View Partnership Details
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
-    <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>NYC Money Guide</h4>
+        <p>Practical financial guidance for life in New York City. Empowering New Yorkers with borough-specific advice, real budgets, and actionable strategies.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="posts/how-much-rent.html">Rent Calculator</a></li>
+          <li><a href="posts/nyc-cost-of-living-2026.html">Cost of Living</a></li>
+          <li><a href="#downloads">Free Budget Templates</a></li>
+          <li><a href="glossary.html">Financial Glossary</a></li>
+          <li><a href="index.html#blog">All Guides</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+          <li><a href="rss.xml"><i class="fas fa-rss"></i> RSS Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2026 NYC Money Guide. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> | <a href="disclosure.html">Disclosure Policy</a></p>
+      <p style="margin-top:8px; font-size:13px;">This site provides general financial information for educational purposes only. Consult with a qualified professional for personalized advice. NYC Money Guide participates in affiliate marketing programs.</p>
+    </div>
   </div>
 </footer>
 
+<script>
+  // Mobile Menu Toggle
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('show');
+    this.innerHTML = navMenu.classList.contains('show') 
+      ? '<i class="fas fa-times"></i>' 
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const navMenu = document.getElementById('navMenu');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    
+    if (!navMenu.contains(e.target) && !mobileBtn.contains(e.target) && navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
+      mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', function() {
+      const answer = this.nextElementSibling;
+      const isActive = this.classList.contains('active');
+      
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+        q.nextElementSibling.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        this.classList.add('active');
+        answer.classList.add('active');
+      }
+    });
+  });
+
+  // Contact Form Handling
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formMessage = document.getElementById('formMessage');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Disable submit button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    
+    // Get form data
+    const formData = {
+      reason: document.getElementById('contactReason').value,
+      name: document.getElementById('fullName').value,
+      email: document.getElementById('email').value,
+      borough: document.getElementById('borough').value,
+      message: document.getElementById('message').value,
+      newsletter: document.querySelector('input[name="newsletter"]').checked,
+      timestamp: new Date().toISOString()
+    };
+    
+    // Validate form
+    if (!formData.reason || !formData.name || !formData.email || !formData.message) {
+      showFormMessage('Please fill in all required fields.', 'error');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      return;
+    }
+    
+    if (!validateEmail(formData.email)) {
+      showFormMessage('Please enter a valid email address.', 'error');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      return;
+    }
+    
+    // Simulate form submission (in production, this would be an AJAX call)
+    setTimeout(() => {
+      // Log to console (in production, send to server)
+      console.log('Contact form submission:', formData);
+      
+      // Show success message
+      showFormMessage('Thank you for your message! We\'ll get back to you within 24-48 hours.', 'success');
+      
+      // Reset form
+      contactForm.reset();
+      document.querySelector('input[name="newsletter"]').checked = true;
+      
+      // Re-enable submit button
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      
+      // Scroll to success message
+      formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Auto-hide success message after 10 seconds
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+      }, 10000);
+    }, 1500);
+  });
+
+  function showFormMessage(message, type) {
+    formMessage.textContent = message;
+    formMessage.className = `form-message ${type}`;
+    formMessage.style.display = 'block';
+  }
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  // Auto-populate subject based on URL parameter
+  window.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const subject = urlParams.get('subject');
+    
+    if (subject) {
+      const reasonSelect = document.getElementById('contactReason');
+      const subjectMap = {
+        'brand partnership': 'partnership',
+        'affiliate program': 'partnership',
+        'media inquiry': 'media',
+        'sponsorship': 'sponsorship'
+      };
+      
+      const normalizedSubject = subject.toLowerCase();
+      if (subjectMap[normalizedSubject]) {
+        reasonSelect.value = subjectMap[normalizedSubject];
+      }
+    }
+    
+    // Update copyright year
+    const copyrightElement = document.querySelector('.copyright p');
+    if (copyrightElement) {
+      copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2026', new Date().getFullYear());
+    }
+    
+    // Add active class to current page in navigation
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      if (href === '#' || href === '#!') return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Close mobile menu if open
+        const navMenu = document.getElementById('navMenu');
+        if (navMenu.classList.contains('show')) {
+          navMenu.classList.remove('show');
+          document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>
