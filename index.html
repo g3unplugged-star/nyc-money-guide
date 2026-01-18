@@ -913,7 +913,7 @@
         <a href="#featured" class="btn-primary">
           <i class="fas fa-arrow-down"></i> Explore Guides
         </a>
-        <a href="posts/nyc-cost-of-living-2026.html" class="btn-secondary">
+        <a href="posts/complete-nyc-budget-breakdown-where-money-goes.html" class="btn-secondary">
           <i class="fas fa-calculator"></i> Cost Calculator
         </a>
       </div>
@@ -959,7 +959,7 @@
           <i class="fas fa-home"></i>
         </div>
         <h3>
-          <a href="posts/how-much-rent.html">
+          <a href="posts/nyc-rent-affordability-40x-rule-explained-2026.html">
             NYC Rent Affordability Calculator 2026
           </a>
         </h3>
@@ -975,7 +975,7 @@
           <i class="fas fa-chart-pie"></i>
         </div>
         <h3>
-          <a href="posts/nyc-cost-of-living-2026.html">
+          <a href="posts/complete-nyc-budget-breakdown-where-money-goes.html">
             Complete NYC Cost of Living 2026
           </a>
         </h3>
@@ -1111,8 +1111,8 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="posts/how-much-rent.html">Rent Calculator</a></li>
-          <li><a href="posts/nyc-cost-of-living-2026.html">Cost of Living</a></li>
+          <li><a href="posts/nyc-rent-affordability-40x-rule-explained-2026.html">Rent Calculator</a></li>
+          <li><a href="posts/complete-nyc-budget-breakdown-where-money-goes.html">Cost of Living</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -1316,7 +1316,7 @@
         <div class="tags">
           ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
         </div>
-        <h3><a href="posts/post-${post.id}.html">${post.title}</a></h3>
+        <h3><a href="posts/${post.slug}.html">${post.title}</a></h3>
         <p>${post.excerpt}</p>
         <div class="meta">
           <span><i class="far fa-clock"></i> ${post.readTime} read</span>
@@ -1348,7 +1348,7 @@
     const trending = blogPosts.filter(post => post.trending).slice(0, 5);
     trendingPosts.innerHTML = trending.map(post => `
       <li>
-        <a href="posts/post-${post.id}.html">
+        <a href="posts/${post.slug}.html">
           <i class="fas fa-chevron-right"></i>
           ${post.title}
         </a>
@@ -1360,7 +1360,7 @@
     const recent = blogPosts.filter(post => post.recent).slice(0, 5);
     recentPosts.innerHTML = recent.map(post => `
       <li>
-        <a href="posts/post-${post.id}.html">
+        <a href="posts/${post.slug}.html">
           <i class="fas fa-chevron-right"></i>
           ${post.title}
         </a>
@@ -1544,4 +1544,3 @@
 </script>
 </body>
 </html>
-
