@@ -3,33 +3,792 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About – NYC Money Guide</title>
-  <meta name="description" content="About NYC Money Guide – helping New Yorkers make smarter financial decisions.">
+  
+  <!-- Primary Meta Tags -->
+  <title>About NYC Money Guide – Our Mission, Team & Financial Expertise</title>
+  <meta name="description" content="Learn about NYC Money Guide's mission to provide actionable financial advice for New Yorkers. Meet our team of finance experts, understand our editorial standards, and explore partnership opportunities.">
+  <meta name="keywords" content="NYC finance experts, about NYC money guide, New York financial advisors, NYC budgeting help, NYC financial education, money management NYC">
+  <meta name="author" content="NYC Money Guide">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="About NYC Money Guide – Our Mission & Financial Expertise" />
+  <meta property="og:description" content="Meet the team behind NYC's most practical financial guidance. Learn about our mission to help New Yorkers save money, build credit, and master budgeting." />
+  <meta property="og:image" content="https://g3unplugged-star.github.io/nyc-money-guide/images/about-og.jpg" />
+  <meta property="og:url" content="https://g3unplugged-star.github.io/nyc-money-guide/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NYC Money Guide" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About NYC Money Guide – Our Mission & Financial Expertise" />
+  <meta name="twitter:description" content="Meet the team providing practical financial guidance for New Yorkers." />
+  <meta name="twitter:image" content="https://g3unplugged-star.github.io/nyc-money-guide/images/about-twitter.jpg" />
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://g3unplugged-star.github.io/nyc-money-guide/about.html" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About NYC Money Guide",
+    "description": "NYC Money Guide provides practical financial advice for New York City residents.",
+    "url": "https://g3unplugged-star.github.io/nyc-money-guide/about.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NYC Money Guide",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://g3unplugged-star.github.io/nyc-money-guide/images/logo.png",
+        "width": 160,
+        "height": 60
+      },
+      "founder": ["Alex Chen", "Maria Rodriguez"],
+      "foundingDate": "2023",
+      "numberOfEmployees": "5",
+      "areaServed": "New York City Metropolitan Area"
+    },
+    "mainEntity": {
+      "@type": "WebPageElement",
+      "name": "Our Mission",
+      "text": "To provide New Yorkers with practical, actionable financial guidance tailored to NYC's unique cost of living challenges."
+    }
+  }
+  </script>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    * {box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Inter',sans-serif;background:#FAFAFB;color:#111827;line-height:1.8;padding-bottom:50px;}
-    a{text-decoration:none;color:#2563EB;}
+    /* ===== CSS VARIABLES (Matching Main Site) ===== */
+    :root {
+      --primary: #1A4F7A;
+      --primary-dark: #163D5F;
+      --secondary: #2563EB;
+      --accent: #FF7F50;
+      --accent-dark: #E66938;
+      --light-bg: #FAFAFB;
+      --card-bg: #FFFFFF;
+      --sidebar-bg: #F8FAFC;
+      --text-primary: #111827;
+      --text-secondary: #475569;
+      --text-light: #64748B;
+      --border: #E5E7EB;
+      --success: #059669;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+      --shadow-md: 0 6px 18px rgba(0,0,0,0.07);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
 
-    /* HEADER */
-    header{background:#1A4F7A;color:white;padding:18px 0;}
-    .container{width:90%;max-width:1000px;margin:auto;}
-    nav{display:flex;justify-content:space-between;align-items:center;}
-    nav h1 a{color:white;text-decoration:none;font-size:26px;font-weight:700;}
-    nav ul{list-style:none;display:flex;gap:20px;}
-    nav ul li a{color:#F7FAFC;font-weight:500;padding:5px 8px;border-radius:5px;}
-    nav ul li a:hover{background:#FF7F50;color:white;}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    /* PAGE CONTENT */
-    .page-header{padding:40px 0;text-align:center;}
-    .page-header h2{font-size:32px;color:#1A4F7A;margin-bottom:10px;}
-    .page-content{background:white;padding:30px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
-    .page-content p{margin-bottom:18px;font-size:16px;color:#475569;}
+    html {
+      scroll-behavior: smooth;
+    }
 
-    footer{background:#1A4F7A;color:#F7FAFC;text-align:center;padding:18px 0;margin-top:40px;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* ===== HEADER (Matching Main Site) ===== */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    nav h1 a {
+      color: white;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-tagline {
+      font-size: 14px;
+      color: #CBD5E1;
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: #F7FAFC;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav ul li a:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    nav ul li a i {
+      font-size: 16px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ===== PAGE HERO ===== */
+    .about-hero {
+      background: linear-gradient(135deg, #F0F9FF, #FEF7FF);
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 127, 80, 0.08) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-hero h1 {
+      font-size: 48px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .about-hero p {
+      font-size: 20px;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat h3 {
+      font-size: 36px;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .hero-stat p {
+      font-size: 14px;
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ===== MISSION SECTION ===== */
+    .mission-section {
+      padding: 70px 0;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 18px;
+    }
+
+    .mission-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: start;
+    }
+
+    .mission-card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      height: 100%;
+    }
+
+    .mission-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .mission-icon {
+      font-size: 40px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .mission-card p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .team-section {
+      padding: 70px 0;
+      background: var(--sidebar-bg);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .team-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+      font-weight: 600;
+    }
+
+    .team-card h3 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .team-role {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .team-bio {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .team-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--sidebar-bg);
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .team-social a:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ===== VALUES SECTION ===== */
+    .values-section {
+      padding: 70px 0;
+      background: white;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(255, 127, 80, 0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 20px;
+    }
+
+    .value-item h3 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .value-item p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    /* ===== MONETIZATION SECTION ===== */
+    .monetization-section {
+      padding: 70px 0;
+      background: linear-gradient(135deg, #F8FAFC, #FFFFFF);
+    }
+
+    .monetization-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .monetization-card {
+      background: white;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 40px;
+      border: 2px solid var(--border);
+    }
+
+    .monetization-card h3 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .revenue-model {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .revenue-item {
+      text-align: center;
+      padding: 25px;
+      background: var(--sidebar-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .revenue-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+    .revenue-icon {
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .revenue-item h4 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .revenue-item p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .partnership-cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .partnership-cta h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .partnership-cta p {
+      color: #E2E8F0;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 16px 32px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      padding: 15px 30px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid white;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* ===== EDITORIAL STANDARDS ===== */
+    .editorial-section {
+      padding: 70px 0;
+      background: white;
+    }
+
+    .editorial-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .standards-list {
+      display: grid;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .standard-item {
+      display: flex;
+      gap: 20px;
+      padding: 25px;
+      background: var(--sidebar-bg);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--accent);
+    }
+
+    .standard-icon {
+      color: var(--accent);
+      font-size: 24px;
+      margin-top: 5px;
+    }
+
+    .standard-item h4 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .standard-item p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #F7FAFC;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section h4 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-section ul li a {
+      color: #CBD5E1;
+      transition: all 0.2s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #94A3B8;
+      font-size: 14px;
+    }
+
+    .copyright a {
+      color: #CBD5E1;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      .about-hero h1 {
+        font-size: 40px;
+      }
+      
+      .section-header h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero {
+        padding: 60px 0 40px;
+      }
+      
+      .about-hero h1 {
+        font-size: 32px;
+      }
+      
+      .about-hero p {
+        font-size: 18px;
+      }
+      
+      .hero-stats {
+        gap: 30px;
+      }
+      
+      .hero-stat h3 {
+        font-size: 28px;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        padding: 20px;
+        box-shadow: var(--shadow-lg);
+      }
+      
+      nav ul.show {
+        display: flex;
+      }
+      
+      .monetization-card,
+      .partnership-cta {
+        padding: 30px 20px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-hero h1 {
+        font-size: 28px;
+      }
+      
+      .hero-stats {
+        gap: 20px;
+      }
+      
+      .mission-card,
+      .team-card,
+      .value-item {
+        padding: 20px;
+      }
+      
+      .team-grid,
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .standard-item {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -37,34 +796,429 @@
 <header>
   <div class="container">
     <nav>
-      <h1><a href="index.html">NYC Money Guide</a></h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#blog">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-building-columns"></i>
+        </div>
+        <div>
+          <h1><a href="index.html">NYC Money Guide</a></h1>
+          <div class="brand-tagline">Practical financial clarity for life in New York City</div>
+        </div>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul id="navMenu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html#blog"><i class="fas fa-newspaper"></i> Blog</a></li>
+        <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#partnerships"><i class="fas fa-handshake"></i> Partnerships</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<div class="container">
-  <div class="page-header">
-    <h2>About NYC Money Guide</h2>
-    <p>Helping New Yorkers make smarter financial decisions with clear, practical, and location-specific guidance.</p>
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero-content">
+      <h1>Our Mission: Financial Clarity for Every New Yorker</h1>
+      <p>NYC Money Guide provides practical, actionable financial guidance tailored to NYC's unique cost of living challenges. We're dedicated to making personal finance accessible and empowering for all New Yorkers.</p>
+      
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <h3>50,000+</h3>
+          <p>Monthly Readers</p>
+        </div>
+        <div class="hero-stat">
+          <h3>$2M+</h3>
+          <p>Collective Savings</p>
+        </div>
+        <div class="hero-stat">
+          <h3>98%</h3>
+          <p>Reader Satisfaction</p>
+        </div>
+        <div class="hero-stat">
+          <h3>2023</h3>
+          <p>Founded</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="page-content">
-    <p>NYC Money Guide was created to help New Yorkers navigate one of the most expensive cities in the world. From understanding rent rules, building credit, saving smartly, and budgeting efficiently, we provide tips that are practical, actionable, and tailored to NYC realities.</p>
+</section>
 
-    <p>Our mission is to make finance less intimidating and more approachable. Every article is designed to give you tools and strategies you can implement today, so you can take control of your money in the city that never sleeps.</p>
+<section class="mission-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Core Mission</h2>
+      <p>We believe every New Yorker deserves access to clear, practical financial information to thrive in one of the world's most expensive cities.</p>
+    </div>
+    
+    <div class="mission-content">
+      <div class="mission-card">
+        <div class="mission-icon">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3>Empower Through Education</h3>
+        <p>We break down complex financial concepts into practical, actionable advice that New Yorkers can implement immediately to improve their financial situation.</p>
+        <p>From rent negotiations to credit building, we provide step-by-step guidance tailored to NYC's unique market conditions.</p>
+      </div>
+      
+      <div class="mission-card">
+        <div class="mission-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3>NYC-Specific Guidance</h3>
+        <p>Unlike generic financial advice, our content is specifically crafted for New York City's unique cost structure, regulations, and opportunities.</p>
+        <p>We provide borough-by-borough breakdowns, local resource recommendations, and insights into NYC-specific financial programs.</p>
+      </div>
+      
+      <div class="mission-card">
+        <div class="mission-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Transparency & Trust</h3>
+        <p>We're committed to complete transparency about our revenue sources, affiliate relationships, and editorial standards.</p>
+        <p>Our readers' trust is our most valuable asset, and we work diligently to maintain it through honest, unbiased advice.</p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Meet Our Team</h2>
+      <p>Our team combines financial expertise with deep NYC living experience to provide guidance you can trust.</p>
+    </div>
+    
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">AC</div>
+        <h3>Alex Chen</h3>
+        <div class="team-role">Founder & CEO</div>
+        <div class="team-bio">Former financial analyst with 12+ years NYC living experience. MBA from NYU Stern.</div>
+        <div class="team-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      
+      <div class="team-card">
+        <div class="team-avatar">MR</div>
+        <h3>Maria Rodriguez</h3>
+        <div class="team-role">Head of Content</div>
+        <div class="team-bio">Certified Financial Planner with focus on urban financial planning. Brooklyn resident since 2015.</div>
+        <div class="team-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      
+      <div class="team-card">
+        <div class="team-avatar">JS</div>
+        <h3>Jamal Smith</h3>
+        <div class="team-role">Data Analyst</div>
+        <div class="team-bio">Specializes in NYC housing market data and cost of living analysis. Queens native.</div>
+        <div class="team-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Core Values</h2>
+      <p>The principles that guide every piece of content we create and every decision we make.</p>
+    </div>
+    
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-icon">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h3>Practicality First</h3>
+        <p>We prioritize actionable advice over theoretical concepts. Every recommendation can be implemented immediately.</p>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">
+          <i class="fas fa-balance-scale"></i>
+        </div>
+        <h3>Evidence-Based</h3>
+        <p>Our guidance is backed by data, market research, and real-world testing in NYC's unique environment.</p>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">
+          <i class="fas fa-universal-access"></i>
+        </div>
+        <h3>Accessibility</h3>
+        <p>We believe financial education should be accessible to everyone, regardless of income or background.</p>
+      </div>
+      
+      <div class="value-item">
+        <div class="value-icon">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h3>Reader Protection</h3>
+        <p>We vet every product recommendation and prioritize our readers' financial safety above all else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="monetization" class="monetization-section">
+  <div class="container">
+    <div class="monetization-content">
+      <div class="section-header">
+        <h2>How We Sustain Our Mission</h2>
+        <p>Transparency about our business model ensures we maintain our readers' trust while continuing to provide free, high-quality content.</p>
+      </div>
+      
+      <div class="monetization-card">
+        <h3>Our Revenue Model</h3>
+        <p>We're committed to maintaining editorial independence while sustaining our operations through ethical monetization strategies:</p>
+        
+        <div class="revenue-model">
+          <div class="revenue-item">
+            <div class="revenue-icon">
+              <i class="fas fa-ad"></i>
+            </div>
+            <h4>Display Advertising</h4>
+            <p>Carefully selected, non-intrusive ads from vetted partners relevant to NYC living and personal finance.</p>
+          </div>
+          
+          <div class="revenue-item">
+            <div class="revenue-icon">
+              <i class="fas fa-link"></i>
+            </div>
+            <h4>Affiliate Partnerships</h4>
+            <p>We earn commissions on products we genuinely recommend and use ourselves. We never let commissions influence our recommendations.</p>
+          </div>
+          
+          <div class="revenue-item">
+            <div class="revenue-icon">
+              <i class="fas fa-file-download"></i>
+            </div>
+            <h4>Premium Content</h4>
+            <p>Optional paid resources like detailed budget templates, calculators, and personalized planning tools.</p>
+          </div>
+          
+          <div class="revenue-item">
+            <div class="revenue-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>Sponsored Content</h4>
+            <p>Clearly marked sponsored posts from trusted brands that align with our mission and values.</p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 20px; background: #FEF2F2; border-radius: var(--radius-md); border-left: 4px solid #DC2626;">
+          <h4 style="color: #DC2626; margin-bottom: 10px;"><i class="fas fa-exclamation-circle"></i> Our Promise to Readers</h4>
+          <p style="color: var(--text-secondary);">We will never: charge for basic financial advice, promote products we don't believe in, share your personal data without consent, or allow advertisers to influence our editorial content.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="partnerships" class="partnership-cta">
+      <h3>Partner With Us</h3>
+      <p>We collaborate with brands, financial institutions, and community organizations that share our mission of empowering New Yorkers financially.</p>
+      
+      <div class="cta-buttons">
+        <a href="contact.html?subject=Brand%20Partnership" class="btn-primary">
+          <i class="fas fa-briefcase"></i> Brand Partnerships
+        </a>
+        <a href="contact.html?subject=Affiliate%20Program" class="btn-secondary">
+          <i class="fas fa-link"></i> Affiliate Program
+        </a>
+        <a href="contact.html?subject=Media%20Inquiry" class="btn-secondary">
+          <i class="fas fa-newspaper"></i> Media Inquiries
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="editorial-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Editorial Standards & Ethics</h2>
+      <p>Our commitment to accuracy, transparency, and reader-first content creation.</p>
+    </div>
+    
+    <div class="editorial-content">
+      <p>Maintaining the highest editorial standards is central to our mission. Here's how we ensure the quality and integrity of our content:</p>
+      
+      <div class="standards-list">
+        <div class="standard-item">
+          <div class="standard-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <div>
+            <h4>Fact-Checking Process</h4>
+            <p>Every statistic, regulation reference, and financial figure is verified against primary sources before publication. We update content quarterly to reflect changing NYC regulations and market conditions.</p>
+          </div>
+        </div>
+        
+        <div class="standard-item">
+          <div class="standard-icon">
+            <i class="fas fa-eye-slash"></i>
+          </div>
+          <div>
+            <h4>Clear Disclosure Policy</h4>
+            <p>All affiliate links, sponsored content, and advertising relationships are clearly disclosed. We maintain a strict separation between editorial and advertising departments.</p>
+          </div>
+        </div>
+        
+        <div class="standard-item">
+          <div class="standard-icon">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <div>
+            <h4>Expert Review</h4>
+            <p>All financial advice is reviewed by certified professionals. Complex topics are vetted by multiple experts to ensure accuracy and practical applicability.</p>
+          </div>
+        </div>
+        
+        <div class="standard-item">
+          <div class="standard-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div>
+            <h4>Reader Feedback Integration</h4>
+            <p>We actively incorporate reader questions, concerns, and suggestions into our content planning and revisions. Your real-world experiences shape our guidance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container">
-    <p>© 2026 NYC Money Guide. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>NYC Money Guide</h4>
+        <p>Practical financial guidance for life in New York City. Empowering New Yorkers with borough-specific advice, real budgets, and actionable strategies.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="posts/how-much-rent.html">Rent Calculator</a></li>
+          <li><a href="posts/nyc-cost-of-living-2026.html">Cost of Living</a></li>
+          <li><a href="#downloads">Free Budget Templates</a></li>
+          <li><a href="glossary.html">Financial Glossary</a></li>
+          <li><a href="index.html#blog">All Guides</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Newsletter</a></li>
+          <li><a href="rss.xml"><i class="fas fa-rss"></i> RSS Feed</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2026 NYC Money Guide. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> | <a href="disclosure.html">Disclosure Policy</a></p>
+      <p style="margin-top:8px; font-size:13px;">This site provides general financial information for educational purposes only. Consult with a qualified professional for personalized advice. NYC Money Guide participates in affiliate marketing programs.</p>
+    </div>
   </div>
 </footer>
 
+<script>
+  // Mobile Menu Toggle
+  document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('show');
+    this.innerHTML = navMenu.classList.contains('show') 
+      ? '<i class="fas fa-times"></i>' 
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const navMenu = document.getElementById('navMenu');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    
+    if (!navMenu.contains(e.target) && !mobileBtn.contains(e.target) && navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
+      mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      if (href === '#' || href === '#!') return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Close mobile menu if open
+        const navMenu = document.getElementById('navMenu');
+        if (navMenu.classList.contains('show')) {
+          navMenu.classList.remove('show');
+          document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      }
+    });
+  });
+
+  // Update copyright year
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyrightElement = document.querySelector('.copyright p');
+    if (copyrightElement) {
+      copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2026', new Date().getFullYear());
+    }
+  });
+
+  // Add active class to current page in navigation
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 </body>
 </html>
